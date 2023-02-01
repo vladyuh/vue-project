@@ -1,0 +1,88 @@
+@import "@/assets/scss/helpers/_variables.scss";
+
+.main-preloader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+.main-preloader--full-page {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  transform: translateZ(0);
+  background: $color-nav-bg;
+}
+
+.main-preloader__inner {
+  position: relative;
+  pointer-events: none;
+}
+
+.main-preloader__spinner {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+.main-preloader__spinner:before,
+.main-preloader__spinner:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.main-preloader__spinner:before {
+  animation: ball1 3s infinite;
+  background-color: $white;
+  box-shadow: 30px 0 0 $color-accent;
+  margin-bottom: 10px;
+}
+.main-preloader__spinner:after {
+  animation: ball2 3s infinite;
+  background-color: $color-accent;
+  box-shadow: 30px 0 0 $white;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8) }
+  50% { transform: rotate(360deg) scale(1.2) }
+  100% { transform: rotate(720deg) scale(0.8) }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 $color-accent;
+  }
+  50% {
+    box-shadow: 0 0 0 $color-accent;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 $color-accent;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 $white;
+  }
+  50% {
+    box-shadow: 0 0 0 #fff;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 $white;
+    margin-top: 0;
+  }
+}
+
