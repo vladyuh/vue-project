@@ -10,7 +10,7 @@
         margin: 19px 0;
         font-size: 15px;
         line-height: 180%;
-        color: $color-text-primary;
+        color: $primary-text;
 
         @media screen and (min-width: 376px) {
             font-size: 16px;
@@ -18,7 +18,7 @@
     }
 
     a {
-        color: $color-accent;
+        color: $accent;
         font-size: 15px;
         font-weight: 600;
         line-height: 180%;
@@ -43,7 +43,7 @@
             counter-increment: item;
             font-size: 15px;
             line-height: 180%;
-            color: $color-text-primary;
+            color: $primary-text;
 
             p {
                 margin: 5px 0;
@@ -63,7 +63,7 @@
             font-weight: bold;
             font-size: 14px;
             line-height: 180%;
-            color: $color-text-primary;
+            color: $primary-text;
         }
     }
 
@@ -75,7 +75,7 @@
             position: relative;
             font-size: 15px;
             line-height: 180%;
-            color: $color-text-primary;
+            color: $primary-text;
 
             @media screen and (min-width: 577px) {
                 padding-left: 46px;
@@ -90,7 +90,7 @@
             display: block;
             width: 7px;
             height: 7px;
-            background: $color-text-primary;
+            background: $primary-text;
             border-radius: 50%;
         }
     }
@@ -106,12 +106,12 @@
 
         tr {
             &.head {
-                background: $color-item-bg;
+                background: $item-bg;
                 font-size: 14px;
                 line-height: 180%;
 
                 th {
-                    color: $color-text-primary;
+                    color: $primary-text;
                     padding: 13px 20px;
                 }
             }

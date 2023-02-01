@@ -9,32 +9,32 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: $black;
+  color: $primary-text;
   width: 100%;
   position: relative;
 
   &__selected {
     position: relative;
     transition: all 0.25s ease;
-    border: 2px solid $color-border;
+    border: 2px solid $accent;
     width: 100%;
     outline: none;
     padding: $defaultPadding 40px $defaultPadding $defaultPadding;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: 600;
-    color: transparentize($color-text-primary, 0.2);
+    color: transparentize($primary-text, 0.2);
     background-color: $white;
     height: $inputHeightWithBorder;
     border-radius: 8px;
 
     .custom-select--opened & {
-      border-color: $color-accent;
+      border-color: $accent;
       border-radius: 8px 8px 0 0;
     }
 
     .custom-select--with-value & {
-      color: $black;
+      color: $primary-text;
     }
 
     &--with-icon{
@@ -49,7 +49,7 @@
         align-items: center;
         width: $iconDimensions;
         height: $iconDimensions;
-        color: $black;
+        color: $primary-text;
       }
     }
 
@@ -65,9 +65,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background: $white;
-    -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, .25);
-    box-shadow: 0 0 9px rgba(0, 0, 0, .25);
+    background: $secondary-bg;
     color: $black;
     width: 100%;
     border-radius: 0 0 8px 8px;
@@ -76,10 +74,9 @@
 
     &.open {
       display: block;
-      border: 2px solid $color-accent;
+      border: 2px solid $accent;
       margin-top: -2px;
     }
-
   }
 
   &__options{
@@ -89,7 +86,7 @@
     padding: 0;
     text-align: left;
     border: none;
-    color: $white;
+    color: $primary-text;
     cursor: pointer;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -117,13 +114,13 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: $color-text-primary;
+    color: $secondary-text;
     text-align: left;
 
     &:hover,
     &.active {
-      background: $color-accent-hover;
-      color: $white;
+      background: $item-bg;
+      color: $primary-text;
     }
 
     &-label {
@@ -143,7 +140,7 @@
     bottom: 0;
     right: 0;
     transition: all 0.25s ease;
-    color: $black;
+    color: $primary-text;
     width: 40px;
     padding: 8px;
 

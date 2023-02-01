@@ -21,8 +21,8 @@ html {
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
-  background: $color-primary;
-  color: $color-text-primary;
+  background: $primary-bg;
+  color: $primary-text;
   letter-spacing: normal;
   font-family: 'Mulish', sans-serif;
   scroll-behavior: smooth;
@@ -54,7 +54,7 @@ ul {
 }
 
 a {
-  color: $color-text-primary;
+  color: $primary-text;
   text-decoration: none;
 }
 
@@ -148,7 +148,7 @@ footer {
   &-top-left {
     top: 0;
     left: 0;
-    background-image: url("../public/img/blobs/top-left.svg");
+    background-image: url("../public/img/blobs/top-left.png");
     width: clamp(300px, 40vw, 550px);
     height: clamp(300px, 40vw, 550px);
     z-index: -1;
@@ -160,7 +160,7 @@ footer {
   &-top-right {
     top: 0;
     right: 0;
-    background-image: url("../public/img/blobs/top-right.svg");
+    background-image: url("../public/img/blobs/top-right.png");
     width: clamp(300px, 40vw, 550px);
     height: clamp(300px, 40vw, 550px);
     z-index: -1;
@@ -172,7 +172,7 @@ footer {
   &-bottom-left {
     bottom: 0;
     left: 0;
-    background-image: url("../public/img/blobs/bottom-left.svg");
+    background-image: url("../public/img/blobs/bottom-left.png");
     width: clamp(300px, 40vw, 550px);
     height: clamp(300px, 40vw, 550px);
     z-index: -1;
@@ -185,7 +185,7 @@ footer {
   &-bottom-right {
     bottom: 0;
     right: 0;
-    background-image: url("../public/img/blobs/bottom-right.svg");
+    background-image: url("../public/img/blobs/bottom-right.png");
     width: clamp(300px, 40vw, 550px);
     height: clamp(300px, 40vw, 550px);
     z-index: -1;

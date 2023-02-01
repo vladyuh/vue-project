@@ -10,19 +10,21 @@
   height: 52px;
   padding: 0 32px;
   border: none;
-  background-color: $color-accent;
+  background-color: $accent;
   border-radius: 40px;
   outline: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
+  box-shadow: $elevation;
 
   &:hover {
-    background-color: $color-accent-hover;
+    background-color: $accent-hover;
   }
 
   &.btn--dashed {
     background-color: transparent;
     padding: 0;
+    box-shadow: none !important;
 
     &:hover {
       opacity: 0.7;
@@ -33,14 +35,15 @@
     border-radius: 0;
   }
 
+  &.btn--bordered {
+    box-shadow: none !important;
+  }
+
   &.disabled,
   &[disabled] {
     opacity: 0.5;
     pointer-events: none;
-
-    &:before {
-      background: radial-gradient(75% 100% at 50.34% 100%, rgba(104, 183, 255, 0.3) 0%, rgba(55, 100, 243, 0.3) 100%), linear-gradient(180.11deg, rgba(0, 30, 149, 0.25) 0.11%, rgba(17, 48, 159, 0.25) 99.91%);
-    }
+    box-shadow: none !important;
   }
 }
 
@@ -71,14 +74,14 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
-  color: $white;
+  color: $primary-text;
   letter-spacing: normal;
   text-align: center;
   text-transform: uppercase;
   z-index: 3;
 
   .btn--dashed & {
-    color: $color-accent;
+    color: $primary-text;
 
     &:before {
       content: '';
@@ -86,16 +89,16 @@
       bottom: -8px;
       left: 0;
       width: 100%;
-      border-bottom: 2px dashed $color-accent;
+      border-bottom: 2px dashed $accent;
     }
   }
 
   .btn--bordered & {
-    color: $color-accent;
+    color: $primary-text;
   }
 
   .btn--bordered:hover & {
-    color: $white;
+    color: $primary-text;
   }
 }
 
@@ -137,11 +140,12 @@
 
 .btn--bordered {
   background-color: transparent;
-  border: 2px solid $color-accent;
+  border: 2px solid $accent;
+  box-shadow: none;
 
   &:hover {
-    border-color: $color-accent-hover;
-    background-color: $color-accent-hover;
+    border-color: $accent-hover;
+    background-color: $accent-hover;
   }
 }
 

@@ -21,23 +21,23 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all 0.25s ease;
-  border: 2px solid $color-border;
+  border: 2px solid $accent;
   border-radius: 8px;
   width: 100%;
   padding: $defaultPadding;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: 600;
-  color: $black;
+  color: $secondary-text;
   background-color: $white;
 
   &:focus,
   &:active {
-    border-color: $color-accent;
+    color: $primary-text;
   }
 
   &::placeholder {
-    color: transparentize($color-text-primary, 0.2)
+    color: $secondary-text;
   }
 }
 
@@ -53,7 +53,7 @@ textarea {
       align-items: center;
       width: $iconDimensions;
       height: $iconDimensions;
-      color: $black;
+      color: $primary-text;
     }
 
     input:not([type=checkbox]):not([type=radio]) {
@@ -75,7 +75,7 @@ textarea {
       align-items: center;
       width: $iconDimensions;
       height: $iconDimensions;
-      color: $black;
+      color: $primary-text;
     }
 
     textarea {

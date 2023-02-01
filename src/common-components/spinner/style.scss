@@ -9,28 +9,55 @@
   height: 16px;
   margin: -8px 0 0 -8px;
   border-radius: 50%;
-  animation: spin2 2s linear infinite;
-  background: conic-gradient(from 190.62deg at 50% 50%, rgba(144, 167, 255, 0) 0deg, rgba(144, 167, 255, 0) 39.37deg, #90A7FF 256.87deg, #FFFFFF 360deg);
-  mask: radial-gradient(circle farthest-side,transparent calc(100% - 2px),#fff calc(100% - 2px));
+  border: 2px solid #4a473e;
+  animation: spinner-bulqg1 0.8s infinite linear alternate,
+  spinner-oaa3wk 1.6s infinite linear;
+}
 
-  &::after {
-    content: '';
-    display: block;
-    width: 2px;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    background-color: $white;
-    border-radius: 50%;
+@keyframes spinner-bulqg1 {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  }
+
+  12.5% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  62.5% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
   }
 }
 
-@keyframes spin2 {
+@keyframes spinner-oaa3wk {
   0% {
-    transform: rotate(0deg);
+    transform: scaleY(1) rotate(0deg);
   }
+
+  49.99% {
+    transform: scaleY(1) rotate(135deg);
+  }
+
+  50% {
+    transform: scaleY(-1) rotate(0deg);
+  }
+
   100% {
-    transform: rotate(360deg);
+    transform: scaleY(-1) rotate(-135deg);
   }
 }

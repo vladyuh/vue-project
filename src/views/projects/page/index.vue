@@ -1,5 +1,8 @@
 <template>
-  <section class="project-page-detail">
+  <section
+      v-if="isProjectLoaded"
+      class="project-page-detail"
+  >
     <div class="container">
       <back-title
           :text="currentProject?.title"
@@ -24,7 +27,11 @@
       </div>
     </div>
   </section>
-
+  <preloader
+      v-else
+      full-page
+      remove-overflow
+  />
 </template>
 
 <script>
@@ -32,20 +39,23 @@ import {mapActions} from "vuex";
 import backTitle from "@/common-components/back-title";
 import sectionHeader from "@/common-components/section-header";
 import Btn from "@/common-components/btn"
+import Preloader from "@/common-components/preloader"
 
 export default {
   name: 'ProjectsPageView',
   components: {
     backTitle,
     sectionHeader,
-    Btn
+    Btn,
+    Preloader
   },
   props: {
     code: String
   },
   data() {
     return {
-      projects: null
+      projects: null,
+      isProjectLoaded: false
     }
   },
   created() {
@@ -72,6 +82,7 @@ export default {
           })
           .then((data) => {
             this.projects = data
+            this.isProjectLoaded = true
           });
     }
   }

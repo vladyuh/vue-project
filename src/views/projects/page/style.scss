@@ -16,9 +16,10 @@
   .img-wrp {
     position: relative;
     padding-top: 60%;
-    border: 2px solid $color-accent;
-    border-radius: 16px;
+    border-radius: 8px;
     overflow: hidden;
+    border: 2px solid $accent;
+    background: $item-bg;
   }
 
   img {

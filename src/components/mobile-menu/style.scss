@@ -7,7 +7,7 @@
   left: 0;
   bottom: 0;
   width: 300px;
-  background: $color-item-bg;
+  background: $secondary-bg;
   transition: transform 0.3s ease;
   z-index: 100;
 
@@ -46,22 +46,26 @@
       display: flex;
       align-items: center;
       padding: 8px;
-      margin: 0 -8px;
+      margin: 0 -16px;
       min-height: 48px;
+      font-weight: 600;
+      color: $secondary-text;
 
       &.router-link-exact-active {
-        font-weight: 600;
+        border-radius: 100px;
+        background: $item-bg;
+        color: $primary-text;
       }
 
       &--with-icon{
         position: relative;
-        padding-left: 40px;
+        padding-left: 56px;
       }
 
       &-icon{
         position: absolute;
         top: 50%;
-        left: 8px;
+        left: 16px;
         transform: translateY(-50%);
       }
     }
