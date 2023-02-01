@@ -1,0 +1,36 @@
+@import "../../assets/scss/helpers/variables";
+
+.preloader__spinner--btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  animation: spin2 2s linear infinite;
+  background: conic-gradient(from 190.62deg at 50% 50%, rgba(144, 167, 255, 0) 0deg, rgba(144, 167, 255, 0) 39.37deg, #90A7FF 256.87deg, #FFFFFF 360deg);
+  mask: radial-gradient(circle farthest-side,transparent calc(100% - 2px),#fff calc(100% - 2px));
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    background-color: $white;
+    border-radius: 50%;
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

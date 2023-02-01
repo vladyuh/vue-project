@@ -1,0 +1,154 @@
+@import "../../assets/scss/helpers/variables";
+
+.custom-select {
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: $black;
+  width: 100%;
+  position: relative;
+
+  &__selected {
+    position: relative;
+    transition: all 0.25s ease;
+    border: 2px solid $color-border;
+    width: 100%;
+    outline: none;
+    padding: $defaultPadding 40px $defaultPadding $defaultPadding;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: 600;
+    color: transparentize($color-text-primary, 0.2);
+    background-color: $white;
+    height: $inputHeightWithBorder;
+    border-radius: 8px;
+
+    .custom-select--opened & {
+      border-color: $color-accent;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .custom-select--with-value & {
+      color: $black;
+    }
+
+    &--with-icon{
+      position: relative;
+      padding: $defaultPadding 40px;
+
+      .icon:not(.custom-select__arrow) {
+        position: absolute;
+        top: 14px;
+        left: 12px;
+        display: flex;
+        align-items: center;
+        width: $iconDimensions;
+        height: $iconDimensions;
+        color: $black;
+      }
+    }
+
+  }
+
+  &__options-wrap {
+    display: none;
+    position: absolute !important;
+    top: $inputHeightWithBorder;
+    right: auto;
+    left: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: $white;
+    -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 9px rgba(0, 0, 0, .25);
+    color: $black;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    border: 2px solid transparent;
+    overscroll-behavior: contain;
+
+    &.open {
+      display: block;
+      border: 2px solid $color-accent;
+      margin-top: -2px;
+    }
+
+  }
+
+  &__options{
+    width: 100%;
+    max-height: $inputHeightWithBorder * 3;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+
+    &::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__option {
+    margin: 0;
+    padding: $defaultPadding;
+    -webkit-transition: .15s ease-in;
+    -o-transition: .15s ease-in;
+    transition: .15s ease-in;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: 600;
+    height: $inputHeightWithBorder;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $color-text-primary;
+    text-align: left;
+
+    &:hover,
+    &.active {
+      background: $color-accent-hover;
+      color: $white;
+    }
+
+    &-label {
+      display: block;
+      word-break: break-word;
+    }
+
+    input {
+      display: none;
+    }
+
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.25s ease;
+    color: $black;
+    width: 40px;
+    padding: 8px;
+
+    &-up {
+      transform: scaleY(-1);
+    }
+  }
+}

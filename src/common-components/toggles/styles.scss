@@ -1,0 +1,63 @@
+@import "@/assets/scss/helpers/_variables.scss";
+
+.toggles {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  background: $color-item-bg;
+  border-radius: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.toggles__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 98px;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1 0 auto;
+  user-select: none;
+  transition: all 0.25s ease;
+
+  &.toggles__item--active {
+    background: $color-accent;
+  }
+
+  &:not(.toggles__item--active):hover {
+    background: $color-accent-hover;
+  }
+}
+
+.toggles__content {
+  display: flex;
+  align-items: center;
+}
+
+.toggles__title {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  color: $color-text-primary;
+
+  .toggles__item:hover &,
+  .toggles__item--active & {
+    color: $white;
+  }
+}

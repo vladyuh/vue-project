@@ -1,0 +1,29 @@
+.overflow--hidden {
+  overflow: hidden !important;
+}
+
+.overflow--hidden-fixed {
+  overflow: hidden !important;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.pointer-event-none {
+  pointer-events: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.hidden-opacity {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,32 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.table--responsive {
+  @include sm {
+    thead {
+      display: none;
+    }
+    tbody {
+      display: flex;
+      flex-direction: column;
+    }
+    tr {
+      flex-flow: column;
+      margin: 0 0 10px;
+      padding: 5px 15px;
+      border: 1px solid $color-border;
+
+      td {
+        display: block;
+        padding: 10px 0 !important;
+        border: none !important;
+
+        &::before {
+          content: attr(data-title);
+          display: block;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

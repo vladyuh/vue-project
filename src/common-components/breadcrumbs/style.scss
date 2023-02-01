@@ -1,0 +1,44 @@
+@import "../../assets/scss/helpers/variables";
+
+.breadcrumbs {
+  background-color: transparent;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__item {
+    &::after {
+      content: $breadCrumbDivider;
+      display: inline-block;
+      position: relative;
+      padding: 0 5px;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+    &--active {
+      pointer-events: none;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,226 @@
+@import "../helpers/variables";
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --color-primary: #fff;
+  --color-item-bg: #F0F2F7;
+  --color-nav-bg: #EBEEF5;
+  --color-accent: #1F5AFF;
+  --color-accent-hover: #5280FF;
+  --color-accent-dark: #07163E;
+  --color-accent-dark-hover: #0B215C;
+  --color-accent-dark-hover-1: #0E2870;
+  --color-text-primary: #1f1f1f;
+  --color-text-secondary: #6E81B8;
+  --color-border: #D3D9EB;
+}
+
+html {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  background: $color-primary;
+  color: $color-text-primary;
+  letter-spacing: normal;
+  font-family: 'Mulish', sans-serif;
+  scroll-behavior: smooth;
+}
+
+button:active,
+button:hover,
+input:active,
+input:focus,
+input:hover {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+  line-height: 130%;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  color: $color-text-primary;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+section {
+  position: relative;
+  padding: 16px 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  position: relative;
+  min-height: 100%;
+  flex-grow: 1;
+}
+
+main {
+  padding-top: 56px;
+}
+
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $xl - 1;
+  padding: 0 50px;
+
+  @include xl-max {
+    max-width: 100%;
+  }
+  @include lg-max {
+    padding: 0 25px;
+  }
+  @include sm-max {
+    padding: 0 20px;
+  }
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.blob {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &-top-left {
+    top: 0;
+    left: 0;
+    background-image: url("../public/img/blobs/top-left.svg");
+    width: clamp(300px, 40vw, 550px);
+    height: clamp(300px, 40vw, 550px);
+    z-index: -1;
+    transform: translateX(-45%) translateY(-45%) rotateZ(-25deg);
+    will-change: transform;
+    animation: 30s ease-in-out 2s infinite alternate none running monetY;
+  }
+
+  &-top-right {
+    top: 0;
+    right: 0;
+    background-image: url("../public/img/blobs/top-right.svg");
+    width: clamp(300px, 40vw, 550px);
+    height: clamp(300px, 40vw, 550px);
+    z-index: -1;
+    transform: translateX(60%) translateY(-22%) rotateZ(-10deg);
+    will-change: transform;
+    animation: 30s ease-in-out 2s infinite alternate none running monetW;
+  }
+
+  &-bottom-left {
+    bottom: 0;
+    left: 0;
+    background-image: url("../public/img/blobs/bottom-left.svg");
+    width: clamp(300px, 40vw, 550px);
+    height: clamp(300px, 40vw, 550px);
+    z-index: -1;
+    position: absolute;
+    transform: translateX(-45%) translateY(45%) rotateZ(-10deg);
+    will-change: transform;
+    animation: 30s ease-in-out 2s infinite alternate none running monetB;
+  }
+
+  &-bottom-right {
+    bottom: 0;
+    right: 0;
+    background-image: url("../public/img/blobs/bottom-right.svg");
+    width: clamp(300px, 40vw, 550px);
+    height: clamp(300px, 40vw, 550px);
+    z-index: -1;
+    transform: translateX(30%) translateY(30%) rotateZ(-10deg);
+    will-change: transform;
+    animation: 40s ease-in-out 2s infinite alternate none running monetT;
+  }
+}
+
+@keyframes monetT {
+  to {
+    transform: translateX(30%) translateY(30%) rotateZ(-180deg);
+  }
+}
+
+@keyframes monetY {
+  to {
+    transform: translateX(-45%) translateY(-45%) rotateZ(180deg);
+  }
+}
+
+@keyframes monetW {
+  to {
+    transform: translateX(60%) translateY(-22%) rotateZ(180deg);
+  }
+}
+
+@keyframes monetB {
+  to {
+    transform: translateX(-40%) translateY(40%) rotateZ(-180deg);
+  }
+}
+
+@keyframes monetT {
+  to {
+    transform: translateX(30%) translateY(30%) rotateZ(-180deg);
+  }
+}

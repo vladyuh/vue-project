@@ -1,0 +1,73 @@
+@import "../../assets/scss/helpers/variables";
+
+.radio {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: center;
+    padding: 5px 0;
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        display: none;
+    }
+
+    &__text {
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    &__elem {
+        top: 0;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        min-width: 20px;
+        background-color: $color-item-bg;
+        border: 2px solid $color-border;
+        display: inline-block;
+        margin-right: 10px;
+        border-radius: 50%;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            border: solid $color-border;
+            transition: 0.25s cubic-bezier(.08, .82, .17, 1);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+
+    & input {
+
+        &:disabled {
+            &:checked~.radio__elem,
+            &~.radio__text,
+            &~.radio__elem{
+                opacity: 0.7;
+            }
+        }
+
+        &:checked~.radio__elem:after {
+            opacity: 1;
+            background: $color-accent;
+            border: none;
+        }
+    }
+}

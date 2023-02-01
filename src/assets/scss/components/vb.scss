@@ -1,0 +1,27 @@
+.vb-dragger {
+  width: 6px;
+  right: 2px;
+
+  .vb-visible & {
+    min-height: 1px;
+  }
+
+  .vb-invisible & {
+    min-height: inherit;
+  }
+
+  @include sm {
+
+    .custom-modal & {
+      padding: 16px 0;
+      right: 4px;
+    }
+  }
+
+}
+
+.vb-dragger-styler {
+  height: 100%;
+  border-radius: 3px;
+  background-color: $color-accent;
+}

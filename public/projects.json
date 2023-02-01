@@ -1,0 +1,56 @@
+[
+  {
+    "code": "1",
+    "title": "Fiesta LED",
+    "image": "https://yukhnovski.web.app/img/projects/1.png",
+    "description": "Сайт для компании FiestaLED. Компания FiestaLED производит светодиодные экраны для внутренней и наружной рекламы.",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, без препроцессоров. Front-end на jQuery, а также использовались плагины FancyBox, InputMask, WOW.js.",
+    "url": "/projects/1",
+    "link": "fiestaled.by"
+  },
+  {
+    "code": "2",
+    "title": "ИНТЕР ТОБАККО",
+    "image": "https://yukhnovski.web.app/img/projects/2.png",
+    "description": "ООО Интер Тобакко – это молодое предприятие по выпуску табачной продукции в Беларуси",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Собран с помощью Webpack, а также использовались различные плагины",
+    "url": "/projects/2",
+    "link": "intertobacco.by"
+  },
+  {
+    "code": "3",
+    "title": "Стальной дом",
+    "image": "https://yukhnovski.web.app/img/projects/3.png",
+    "description": "Магазин дверей в Минске - межкомнатные и входные двери «Стальной дом»",
+    "dev": "Верстка по макетам из Photoshop. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на jQuery",
+    "url": "/projects/3",
+    "link": "dverimarket.by"
+  },
+  {
+    "code": "4",
+    "title": "МЕДВЕДЕВ И К",
+    "image": "https://yukhnovski.web.app/img/projects/4.png",
+    "description": "Магазин дверей белорусcкого производства с установкой в Минске «МЕДВЕДЕВ И К»",
+    "dev": "Редизайн сайта, верстка новых блоков по макетам из Figma. Доработки front-end на jQuery",
+    "url": "/projects/4",
+    "link": "medvedev.by"
+  },
+  {
+    "code": "5",
+    "title": "АКС",
+    "image": "https://yukhnovski.web.app/img/projects/5.png",
+    "description": "Лендинг. Компьютерное и серверное оборудование для офиса",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Собран с помощью Webpack",
+    "url": "/projects/5",
+    "link": "tender-pc.ru"
+  },
+  {
+    "code": "6",
+    "title": "МЕРАТЕХ",
+    "image": "https://yukhnovski.web.app/img/projects/6.png",
+    "description": "Серверное оборудование в Минске. Поставщик серверного оборудования",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Собран с помощью Webpack. jQuery и другие плагины",
+    "url": "/projects/6",
+    "link": "servera.by"
+  }
+]

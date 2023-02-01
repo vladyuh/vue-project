@@ -1,0 +1,14 @@
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+  transition: ease-out .15s;
+}
+
+.slide-bottom-enter-to,
+.slide-bottom-leave {
+  transform: translate3d(0, 0, 0);
+}
+
+.slide-bottom-enter,
+.slide-bottom-leave-to {
+  transform: translate3d(0, -100%, 0);
+}

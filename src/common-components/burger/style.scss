@@ -1,0 +1,10 @@
+@import "../../assets/scss/helpers/variables";
+
+.burger {
+  cursor: pointer;
+}
+.burger__icon {
+  display: block;
+  width: auto;
+  color: $black;
+}

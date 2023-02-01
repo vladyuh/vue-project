@@ -1,0 +1,14 @@
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: all .3s;
+}
+
+.accordion-enter-to,
+.accordion-leave {
+  transform: translate3d(0, 0, 0);
+}
+
+.accordion-enter,
+.accordion-leave-to {
+  transform: translate3d(0, -100%, 0);
+}

@@ -1,0 +1,63 @@
+.slide-bottom-bounce-enter-active {
+  animation: slideBounceBottomTo 0.5s ease-out;
+}
+
+.slide-bottom-bounce-leave-active {
+  animation: slideBounceBottomBack 0.5s ease-out;
+}
+
+.slide-top-bounce-enter-active {
+  animation: slideBounceTopTo 0.3s ease-out;
+}
+
+.slide-top-bounce-leave-active {
+  animation: slideBounceTopBack 0.3s ease-out;
+}
+
+@keyframes slideBounceBottomTo {
+  0% {
+    transform: translate3d(0, 250%, 0);
+  }
+  70% {
+    transform: translate3d(0, -15%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideBounceBottomBack {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, -15%, 0);
+  }
+  100% {
+    transform: translate3d(0, 250%, 0);
+  }
+}
+
+@keyframes slideBounceTopTo {
+  0% {
+    transform: translate3d(0, -250%, 0);
+  }
+  70% {
+    transform: translate3d(0, 15%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideBounceTopBack {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, 15%, 0);
+  }
+  100% {
+    transform: translate3d(0, -250%, 0);
+  }
+}

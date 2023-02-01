@@ -1,0 +1,86 @@
+@import "../../assets/scss/helpers/variables";
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]) {
+  min-height: $inputHeight;
+}
+
+textarea {
+  min-height: 104px;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+  outline: none;
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.25s ease;
+  border: 2px solid $color-border;
+  border-radius: 8px;
+  width: 100%;
+  padding: $defaultPadding;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: 600;
+  color: $black;
+  background-color: $white;
+
+  &:focus,
+  &:active {
+    border-color: $color-accent;
+  }
+
+  &::placeholder {
+    color: transparentize($color-text-primary, 0.2)
+  }
+}
+
+.input {
+  &-wr--with-icon {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 16px;
+      left: 12px;
+      display: flex;
+      align-items: center;
+      width: $iconDimensions;
+      height: $iconDimensions;
+      color: $black;
+    }
+
+    input:not([type=checkbox]):not([type=radio]) {
+      width: 100%;
+      padding: $paddingWithIcon !important;
+    }
+  }
+}
+
+.textarea {
+  &-wr--with-icon {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 16px;
+      left: 12px;
+      display: flex;
+      align-items: center;
+      width: $iconDimensions;
+      height: $iconDimensions;
+      color: $black;
+    }
+
+    textarea {
+      width: 100%;
+      padding: $paddingWithIcon !important;
+    }
+  }
+}

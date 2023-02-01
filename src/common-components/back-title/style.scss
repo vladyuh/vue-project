@@ -1,0 +1,112 @@
+@import "@/assets/scss/helpers/_variables.scss";
+
+.back-title__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  border-radius: 100%;
+  background-color: $color-item-bg;
+  cursor: pointer;
+}
+
+.back-title__button-icon {
+  width: 12px;
+  height: auto;
+}
+
+.back-title__wrap {
+  position: relative;
+}
+
+.back-title__inner-2 {
+  display: flex;
+  align-items: center;
+}
+
+.back-title__inner {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 28px 0 28px 0;
+  z-index: 2;
+  transition: all 0.25s ease;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $color-accent;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:before {
+      opacity: 1;
+    }
+
+    .back-title__button {
+      background: $white;
+    }
+
+    .back-title__button-text {
+      color: $white;
+    }
+
+    .show-top-bar + .main & {
+      transform: translateY(56px);
+    }
+  }
+}
+
+.back-title__button-text {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: $color-text-primary;
+
+  .fixed & {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.back-title__button-text--capitalize {
+  text-transform: capitalize;
+}
+
+.back-title__fake_height,
+.back-title__fake_height-all {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-title__fake_height-all {
+  position: absolute;
+}
+
+.back-title__container {
+  width: 100%;
+
+  .back-title__inner:not(.fixed) & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}

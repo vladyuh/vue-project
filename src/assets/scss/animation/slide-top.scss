@@ -1,0 +1,14 @@
+.slide-top-enter-active,
+.slide-top-leave-active {
+  transition: ease-out .15s;
+}
+
+.slide-top-enter-to,
+.slide-top-leave {
+  transform: translate3d(0, 0, 0);
+}
+
+.slide-top-enter,
+.slide-top-leave-to {
+  transform: translate3d(0, 100%, 0);
+}

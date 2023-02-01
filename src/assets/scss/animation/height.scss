@@ -1,0 +1,14 @@
+.height-enter-active,
+.height-leave-active {
+  transition: all 1s;
+}
+
+.height-enter-to,
+.height-leave {
+  height: 100%;
+}
+
+.height-enter,
+.height-leave-to {
+  height: 0;
+}

@@ -1,0 +1,22 @@
+.zoom-in-left-no-mobile-enter-active,
+.zoom-in-left-no-mobile-leave-active {
+  @include md {
+    transition: all .5s;
+  }
+}
+
+.zoom-in-left-no-mobile-enter-to,
+.zoom-in-left-no-mobile-leave {
+  @include md {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.zoom-in-left-no-mobile-enter,
+.zoom-in-left-no-mobile-leave-to {
+  @include md {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}

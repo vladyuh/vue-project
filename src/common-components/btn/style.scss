@@ -1,0 +1,152 @@
+@import "../../assets/scss/helpers/variables";
+
+.btn {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding: 0 32px;
+  border: none;
+  background-color: $color-accent;
+  border-radius: 40px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    background-color: $color-accent-hover;
+  }
+
+  &.btn--dashed {
+    background-color: transparent;
+    padding: 0;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &.btn--no-rounded {
+    border-radius: 0;
+  }
+
+  &.disabled,
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+
+    &:before {
+      background: radial-gradient(75% 100% at 50.34% 100%, rgba(104, 183, 255, 0.3) 0%, rgba(55, 100, 243, 0.3) 100%), linear-gradient(180.11deg, rgba(0, 30, 149, 0.25) 0.11%, rgba(17, 48, 159, 0.25) 99.91%);
+    }
+  }
+}
+
+.btn__icon-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%, 0);
+  z-index: 3;
+}
+
+.btn--middle {
+  height: 32px;
+}
+
+.btn--small {
+  height: 24px;
+}
+
+.btn__text {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $white;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 3;
+
+  .btn--dashed & {
+    color: $color-accent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      border-bottom: 2px dashed $color-accent;
+    }
+  }
+
+  .btn--bordered & {
+    color: $color-accent;
+  }
+
+  .btn--bordered:hover & {
+    color: $white;
+  }
+}
+
+.btn__text--loading {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btn--gradient {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(75% 100% at 50.34% 100%, #2094FF 0%, #0B3DDD 100%);
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(75% 100% at 50.34% 100%, #D7DFFF 0%, #4765D6 53.25%, #183CC8 100%);
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .no-touch &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.btn--bordered {
+  background-color: transparent;
+  border: 2px solid $color-accent;
+
+  &:hover {
+    border-color: $color-accent-hover;
+    background-color: $color-accent-hover;
+  }
+}
+
+.btn__icon {
+  position: relative;
+  margin-right: 10px;
+  z-index: 3;
+}

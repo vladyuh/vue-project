@@ -1,0 +1,43 @@
+.bounce-dropdown {
+  &.v-enter-to,
+  &.open {
+    .bounce-dropdown__item {
+      &:not(.quick-bar__section) {
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            animation: bounceDropdownItem 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) #{ $i / 20 }s 1 forwards;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bounce-dropdown__item {
+  &:not(.quick-bar__section) {
+    opacity: 0;
+  }
+
+  .quick-bar__menu-item-dropdown--no-items & {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceDropdownItem {
+  0% {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+  99.9% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    // transform: none сделан для фикса позиции модалки в сайдбаре
+    transform: none;
+    opacity: 1;
+  }
+}
