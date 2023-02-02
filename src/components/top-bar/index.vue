@@ -71,7 +71,7 @@ export default {
     return {
       isScrolled: false,
       isShowTopBar: true,
-      isTop: false,
+      isTop: true,
       previousCoordinates: -CONTENT_RECT_TOP,
       forceShowMenu: false,
       windowWidth: 0
