@@ -51,19 +51,21 @@
   }
 
   &__logo {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 900;
   }
 
   &__nav {
     margin-left: auto;
+    display: flex;
+    gap: 16px;
 
     &-link {
       display: flex;
       align-items: center;
       padding: 8px;
-      margin: 0 -8px;
       transition: all 0.25s ease;
+      font-size: 18px;
       font-weight: 600;
 
       &:not(.router-link-exact-active):hover {

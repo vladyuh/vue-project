@@ -18,7 +18,7 @@
   box-shadow: $elevation;
 
   &:hover {
-    background-color: $accent-hover;
+    background-color: darken($accent, 10%);
   }
 
   &.btn--dashed {

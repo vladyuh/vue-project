@@ -10,9 +10,9 @@
       />
       <div class="projects-page__list">
         <project-list-item
-          v-for="(project, index) in projects"
-          :key="index"
-          :project="project"
+            v-for="(project, index) in projects"
+            :key="index"
+            :project="project"
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 export const MOBILE = 600
 export const TABLET = 960
 export const LAPTOP = 1152
-export const DESKTOP = 1440
+export const DESKTOP = 1280
 
 function changeSizeFlagMethod(state) {
     if (window.innerWidth <= state.bMobile) {

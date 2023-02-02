@@ -1,13 +1,19 @@
 @import "@/assets/scss/helpers/variables";
+@import "@/assets/scss/helpers/mixins";
 
 .project-page-detail {
   padding-bottom: 48px;
 }
 
 .project-container {
-  max-width: 800px;
+  display: flex;
+  flex-direction: column-reverse;
   margin: 0 auto;
   font-weight: 500;
+
+  @include lg-max {
+    max-width: 800px;
+  }
 
   .section-h4 {
     margin-top: 24px;
@@ -16,10 +22,16 @@
   .img-wrp {
     position: relative;
     padding-top: 60%;
-    border-radius: 8px;
+    border-radius: 24px;
     overflow: hidden;
     border: 2px solid $accent;
     background: $item-bg;
+
+    @include lg {
+      position: sticky;
+      top: 96px;
+      padding-top: 0;
+    }
   }
 
   img {
@@ -30,6 +42,28 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+
+    @include lg {
+      position: static;
+    }
+  }
+
+  @include lg {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+.project-page-detail__left {
+  @include lg {
+    flex-basis: 500px;
+    flex-shrink: 0;
+  }
+}
+
+.project-page-detail__right {
+  @include lg {
+    flex-grow: 1;
   }
 }
 
@@ -38,4 +72,8 @@
   align-items: center;
   justify-content: center;
   padding-top: 16px;
+
+  @include lg {
+    justify-content: flex-start;
+  }
 }

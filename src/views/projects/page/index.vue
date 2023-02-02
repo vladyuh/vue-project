@@ -10,20 +10,24 @@
       />
     </div>
     <div v-if="isLoaded" class="container project-container">
-      <div class="img-wrp">
-        <img :src="currentProject?.image" :alt="currentProject?.title">
+      <div class="project-page-detail__left">
+        <section-header :level="4" text="Описание"/>
+        <p v-html="currentProject?.description"></p>
+        <section-header :level="4" text="Разработка"/>
+        <p v-html="currentProject?.dev"></p>
+        <div class="project-page__btn-wr">
+          <btn
+              class="project-page__btn"
+              :href="`https://${currentProject?.link}`"
+          >
+            Подробнее
+          </btn>
+        </div>
       </div>
-      <section-header :level="4" text="Описание"/>
-      <p v-html="currentProject?.description"></p>
-      <section-header :level="4" text="Разработка"/>
-      <p v-html="currentProject?.dev"></p>
-      <div class="project-page__btn-wr">
-        <btn
-            class="project-page__btn"
-            :href="`https://${currentProject?.link}`"
-        >
-          Подробнее
-        </btn>
+      <div class="project-page-detail__right">
+        <div class="img-wrp">
+          <img :src="currentProject?.image" :alt="currentProject?.title">
+        </div>
       </div>
     </div>
   </section>
@@ -66,16 +70,16 @@ export default {
   mounted() {
   },
   computed: {
-    isLoaded () {
+    isLoaded() {
       return this.projects
     },
-    currentProject () {
+    currentProject() {
       return this.projects?.find((el) => el.code === this.code)
     }
   },
   methods: {
     ...mapActions(['openModal']),
-    getProjectData () {
+    getProjectData() {
       fetch('../projects.json')
           .then((response) => {
             return response.json();

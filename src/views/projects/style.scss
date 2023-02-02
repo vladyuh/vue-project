@@ -29,10 +29,9 @@
 .projects-list__item-wr {
   padding: 24px;
   background: $item-bg;
-  border-radius: 16px;
+  border-radius: 24px;
   z-index: 1;
   transition: all 0.25s ease;
-  box-shadow: $elevation;
 }
 
 .projects-list__item-link {

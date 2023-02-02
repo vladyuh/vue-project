@@ -17,9 +17,14 @@ export default new Vuex.Store({
         href: "/"
       },
       {
-        iconName: "ic_apps",
+        iconName: "ic_projects",
         label: "Проекты",
         href: "/projects"
+      },
+      {
+        iconName: "ic_apps",
+        label: "Компоненты",
+        href: "/styles"
       },
     ],
     breadcrumbs: [
