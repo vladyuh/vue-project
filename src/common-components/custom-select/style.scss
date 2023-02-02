@@ -24,13 +24,13 @@
     line-height: $line-height;
     font-weight: 600;
     color: transparentize($primary-text, 0.2);
-    background-color: $white;
+    background-color: $item-bg;
     height: $inputHeightWithBorder;
     border-radius: 8px;
 
     .custom-select--opened & {
       border-color: $accent;
-      border-radius: 8px 8px 0 0;
+      background: $accent;
     }
 
     .custom-select--with-value & {
@@ -52,36 +52,32 @@
         color: $primary-text;
       }
     }
-
   }
 
   &__options-wrap {
     display: none;
     position: absolute !important;
-    top: $inputHeightWithBorder;
+    top: $inputHeightWithBorder + 6px;
     right: auto;
     left: 0;
     z-index: 1;
     margin: 0;
     padding: 0;
     list-style: none;
-    background: $secondary-bg;
+    background: $accent;
     color: $black;
     width: 100%;
-    border-radius: 0 0 8px 8px;
-    border: 2px solid transparent;
+    border-radius: 8px;
     overscroll-behavior: contain;
 
     &.open {
       display: block;
-      border: 2px solid $accent;
-      margin-top: -2px;
     }
   }
 
   &__options{
     width: 100%;
-    max-height: $inputHeightWithBorder * 3;
+    max-height: ($inputHeightWithBorder * 3) - 2px;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -116,10 +112,15 @@
     overflow: hidden;
     color: $secondary-text;
     text-align: left;
+    border-bottom: 2px solid $secondary-text;
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     &:hover,
     &.active {
-      background: $item-bg;
+      background: rgba(0, 0, 0, 0.05);
       color: $primary-text;
     }
 

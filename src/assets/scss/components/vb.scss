@@ -10,6 +10,11 @@
     min-height: inherit;
   }
 
+  .custom-select & {
+    padding: 4px 0;
+    right: 4px;
+  }
+
   @include sm {
 
     .custom-modal & {
@@ -17,11 +22,10 @@
       right: 4px;
     }
   }
-
 }
 
 .vb-dragger-styler {
   height: 100%;
   border-radius: 3px;
-  background-color: $accent;
+  background-color: transparentize($secondary-text, 0.25);
 }

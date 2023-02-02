@@ -29,10 +29,15 @@ textarea {
   line-height: $line-height;
   font-weight: 600;
   color: $secondary-text;
-  background-color: $white;
+  background-color: $item-bg;
 
   &:focus,
   &:active {
+    color: $primary-text;
+    background: $accent;
+  }
+
+  &:valid {
     color: $primary-text;
   }
 
