@@ -1,4 +1,4 @@
-# vue-kit
+# YU
 
 ## Project setup
 ```

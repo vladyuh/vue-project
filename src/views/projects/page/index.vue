@@ -5,20 +5,20 @@
   >
     <div class="container">
       <back-title
-          :text="currentProject?.title"
+          :text="project?.title"
           capitalize
       />
     </div>
     <div v-if="isLoaded" class="container project-container">
       <div class="project-page-detail__left">
         <section-header :level="4" text="Описание"/>
-        <p v-html="currentProject?.description"></p>
+        <p v-html="project?.description"></p>
         <section-header :level="4" text="Разработка"/>
-        <p v-html="currentProject?.dev"></p>
+        <p v-html="project?.dev"></p>
         <div class="project-page__btn-wr">
           <btn
               class="project-page__btn"
-              :href="`https://${currentProject?.link}`"
+              :href="`https://${project?.link}`"
           >
             Подробнее
           </btn>
@@ -26,7 +26,7 @@
       </div>
       <div class="project-page-detail__right">
         <div class="img-wrp">
-          <img :src="currentProject?.image" :alt="currentProject?.title">
+          <img :src="project?.image" :alt="project?.title">
         </div>
       </div>
     </div>
@@ -59,6 +59,7 @@ export default {
   data() {
     return {
       projects: null,
+      project: null,
       isProjectLoaded: false
     }
   },
@@ -73,9 +74,6 @@ export default {
     isLoaded() {
       return this.projects
     },
-    currentProject() {
-      return this.projects?.find((el) => el.code === this.code)
-    }
   },
   methods: {
     ...mapActions(['openModal']),
@@ -87,7 +85,15 @@ export default {
           .then((data) => {
             this.projects = data
             this.isProjectLoaded = true
+            this.currentProject()
           });
+    },
+    currentProject() {
+      this.project = this.projects?.find((el) => el.code === this.code)
+
+      if(!this.project) {
+        this.$router.push({ path: '/404/' })
+      }
     }
   }
 }

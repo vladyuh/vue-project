@@ -49,7 +49,17 @@
             </li>
           </ul>
         </div>
-        <div class="mobile-menu__bottom"></div>
+        <div class="mobile-menu__bottom">
+          <switcher
+              name="dark-mode"
+              id="dark-mode"
+              class="mobile-menu__dark-mode"
+              @input="changeDarkMode"
+              :value="isDarkMode"
+          >
+            <span>Тёмная тема</span>
+          </switcher>
+        </div>
       </div>
     </div>
   </div>
@@ -59,10 +69,12 @@
 <script>
 import { mapActions } from "vuex";
 import icon from "@/common-components/icon";
+import Switcher from "@/common-components/switcher";
 
 export default {
   name: "mobile-menu",
   components: {
+    Switcher,
     icon
   },
   props: {
@@ -73,16 +85,31 @@ export default {
   },
   data() {
     return {
+      isDarkMode: null
     }
   },
   beforeDestroy() {
     this.closeMenu()
+  },
+  created () {
+    let darkmode = JSON.parse(localStorage?.getItem('darkmode'))
+
+    if(!darkmode) {
+      localStorage.setItem('darkmode', false)
+      darkmode = false
+    }
+
+    this.isDarkMode = darkmode
   },
   methods: {
     ...mapActions(['closeMenu']),
     closeMobileMenu () {
       this.$bus.emit('close-mobile-menu')
     },
+    changeDarkMode () {
+      this.isDarkMode = !this.isDarkMode
+      this.$bus.emit('darkmode-change', this.isDarkMode)
+    }
   }
 }
 

@@ -2,7 +2,7 @@
   {
     "code": "1",
     "title": "Fiesta LED",
-    "image": "https://yukhnovski.web.app/img/projects/1.png",
+    "image": "/img/projects/1.png",
     "description": "Сайт для компании FiestaLED. Компания FiestaLED производит светодиодные экраны для внутренней и наружной рекламы.",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, без препроцессоров. Front-end на jQuery, а также использовались плагины FancyBox, InputMask, WOW.js.",
     "url": "/projects/1",
@@ -11,7 +11,7 @@
   {
     "code": "2",
     "title": "ИНТЕР ТОБАККО",
-    "image": "https://yukhnovski.web.app/img/projects/2.png",
+    "image": "/img/projects/2.png",
     "description": "ООО Интер Тобакко – это молодое предприятие по выпуску табачной продукции в Беларуси",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Собран с помощью Webpack, а также использовались различные плагины",
     "url": "/projects/2",
@@ -20,7 +20,7 @@
   {
     "code": "3",
     "title": "Стальной дом",
-    "image": "https://yukhnovski.web.app/img/projects/3.png",
+    "image": "/img/projects/3.png",
     "description": "Магазин дверей в Минске - межкомнатные и входные двери «Стальной дом»",
     "dev": "Верстка по макетам из Photoshop. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на jQuery",
     "url": "/projects/3",
@@ -29,7 +29,7 @@
   {
     "code": "4",
     "title": "МЕДВЕДЕВ И К",
-    "image": "https://yukhnovski.web.app/img/projects/4.png",
+    "image": "/img/projects/4.png",
     "description": "Магазин дверей белорусcкого производства с установкой в Минске «МЕДВЕДЕВ И К»",
     "dev": "Редизайн сайта, верстка новых блоков по макетам из Figma. Доработки front-end на jQuery",
     "url": "/projects/4",
@@ -38,7 +38,7 @@
   {
     "code": "5",
     "title": "АКС",
-    "image": "https://yukhnovski.web.app/img/projects/5.png",
+    "image": "/img/projects/5.png",
     "description": "Лендинг. Компьютерное и серверное оборудование для офиса",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Собран с помощью Webpack",
     "url": "/projects/5",
@@ -47,10 +47,118 @@
   {
     "code": "6",
     "title": "МЕРАТЕХ",
-    "image": "https://yukhnovski.web.app/img/projects/6.png",
+    "image": "/img/projects/6.png",
     "description": "Серверное оборудование в Минске. Поставщик серверного оборудования",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Собран с помощью Webpack. jQuery и другие плагины",
     "url": "/projects/6",
     "link": "servera.by"
+  },
+  {
+    "code": "7",
+    "title": "ARTROOM",
+    "image": "/img/projects/7.png",
+    "description": "ARTROOM — профессиональный дизайн интерьера в Минске, проекты домов",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на jQuery, а также использовались различные плагины",
+    "url": "/projects/7",
+    "link": "artroom-design.com"
+  },
+  {
+    "code": "8",
+    "title": "ГрузОК",
+    "image": "/img/projects/8.png",
+    "description": "Грузоперевозки и переезды по всей Беларуси",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на jQuery, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один",
+    "url": "/projects/8",
+    "link": "gruzok.by"
+  },
+  {
+    "code": "9",
+    "title": "Эстемед",
+    "image": "/img/projects/9.png",
+    "description": "Центр медицинской косметологии \"Эстемед\" в г. Могилёв",
+    "dev": "Редизайн сайта, верстка новых блоков по макетам из Figma. Доработки front-end на jQuery",
+    "url": "/projects/9",
+    "link": "estemed.by"
+  },
+  {
+    "code": "10",
+    "title": "Дон Жуан",
+    "image": "/img/projects/10.png",
+    "description": "Сайт мюзикла «Дон Жуан. Нерассказанная история»",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один",
+    "url": "/projects/10",
+    "link": "donjuanmusical.ru"
+  },
+  {
+    "code": "11",
+    "title": "Доктор Лидер",
+    "image": "/img/projects/11.png",
+    "description": "Лендинг для ООО \"Центр Инновационной Флебологии\"",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS.Front-end на Vanilla JS, Gulp для автоматизации",
+    "url": "/projects/11",
+    "link": "myginecolog.ru"
+  },
+  {
+    "code": "12",
+    "title": "Газосиликат",
+    "image": "/img/projects/12.png",
+    "description": "Лендинг для компании “Газосиликат”. Производство и доставка бетона и раствора",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации",
+    "url": "/projects/12",
+    "link": "beton.gazosilicat.by"
+  },
+  {
+    "code": "13",
+    "title": "Food Expert",
+    "image": "/img/projects/13.png",
+    "description": "Конструктор прибыльной франшизы ресторанных и ритейл брендов. Находится в стадии тестирования заказчиком",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один",
+    "url": "/projects/13",
+    "link": "food-expert.org"
+  },
+  {
+    "code": "14",
+    "title": "TUDARU",
+    "image": "/img/projects/14.png",
+    "description": "Туристическое агентство TUDARU. Находится в стадии тестирования заказчиком",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один",
+    "url": "/projects/14",
+    "link": "tudaru.ru"
+  },
+  {
+    "code": "15",
+    "title": "Doctor Ron",
+    "image": "/img/projects/15.png",
+    "description": "Институт нитевой имплантологии. Находится в стадии backend - разработки",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации",
+    "url": "/projects/15",
+    "link": "drron.ru"
+  },
+  {
+    "code": "16",
+    "title": "Autofind",
+    "image": "/img/projects/16.png",
+    "description": "Личный кабинет по подбору автомобилей, компания “Autofind. Находится в стадии тестирования заказчиком",
+    "dev": "Progressive Web App. Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации.",
+    "url": "/projects/16",
+    "link": "autos.fvds.ru"
+  },
+  {
+    "code": "17",
+    "title": "Евромедика",
+    "image": "/img/projects/17.png",
+    "description": "Личный кабинет пациента клиники “Евромедика”, реализованный на фреймворке Vue.js. Находится в стадии backend - разработки",
+    "dev": "Progressive Web App. Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vue.js 2 + Vue Router",
+    "url": "/projects/17",
+    "link": "evromedica.fvds.ru/lk"
+  },
+  {
+    "code": "18",
+    "title": "LDMU",
+    "image": "/img/projects/18.png",
+    "description": "LDMU - переезды в США. Находится в стадии frontend - разработки",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации.",
+    "url": "/projects/18",
+    "link": "ld-movers.com"
   }
 ]

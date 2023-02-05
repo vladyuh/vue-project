@@ -29,6 +29,10 @@
     width: 100%;
     background: $primary-bg;
 
+    .dark-mode & {
+      background: $primary-bg-dm;
+    }
+
     @include sm {
       margin: auto;
       max-height: 100%;
@@ -73,6 +77,10 @@
     padding: 0 15px;
     background: $primary-bg;
     z-index: 1;
+
+    .dark-mode & {
+      background: $primary-bg-dm;
+    }
 
     @include sm {
       height: 80px;

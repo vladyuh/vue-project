@@ -23,6 +23,11 @@ html {
   letter-spacing: normal;
   font-family: 'Mulish', sans-serif;
   scroll-behavior: smooth;
+
+  &.dark-mode {
+    background: $primary-bg-dm;
+    color: $white
+  }
 }
 
 button:active,
@@ -53,6 +58,10 @@ ul {
 a {
   color: $primary-text;
   text-decoration: none;
+
+  .dark-mode & {
+    color: $white;
+  }
 }
 
 img {
@@ -146,6 +155,10 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  .dark-mode & {
+    filter: brightness(0.2);
+  }
 
   &-top-left {
     top: 0;

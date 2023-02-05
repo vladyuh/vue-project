@@ -31,18 +31,37 @@ textarea {
   color: $secondary-text;
   background-color: $item-bg;
 
+  .dark-mode & {
+    color: $white;
+    background-color: $item-bg-dm;
+    border-color: $white;
+  }
+
   &:focus,
   &:active {
     color: $primary-text;
     background: $accent;
+
+    .dark-mode & {
+      color: $white;
+      background: $accent-dm;
+    }
   }
 
   &:valid {
     color: $primary-text;
+
+    .dark-mode & {
+      color: $white;
+    }
   }
 
   &::placeholder {
     color: $secondary-text;
+
+    .dark-mode & {
+      color: transparentize($white, 0.3);
+    }
   }
 }
 
@@ -59,6 +78,10 @@ textarea {
       width: $iconDimensions;
       height: $iconDimensions;
       color: $primary-text;
+
+      .dark-mode & {
+        color: $white;
+      }
     }
 
     input:not([type=checkbox]):not([type=radio]) {
@@ -81,6 +104,10 @@ textarea {
       width: $iconDimensions;
       height: $iconDimensions;
       color: $primary-text;
+
+      .dark-mode & {
+        color: $white;
+      }
     }
 
     textarea {

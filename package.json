@@ -1,11 +1,12 @@
 {
-  "name": "vue-kit",
+  "name": "yukhnovski",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "generate-icon": "vue-asset-generate -a public/logo.png --no-manifest"
   },
   "dependencies": {
     "core-js": "^3.8.3",

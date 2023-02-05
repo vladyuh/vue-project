@@ -17,8 +17,12 @@
             :level="5"
             v-html="homePageData?.pageCaption"
         />
-        <btn>
-          <span>Обратная связь</span>
+        <btn
+          no-rounded
+          icon="ic_telegram"
+          href="https://t.me/amogus_1997"
+        >
+          <span>Telegram</span>
         </btn>
       </div>
     </section>

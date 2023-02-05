@@ -92,6 +92,10 @@
   max-height: 95%;
   margin: 0 auto;
 
+  .dark-mode & {
+    background-color: $primary-bg-dm;
+  }
+
   &.square {
     border-radius: 0;
   }
@@ -146,6 +150,10 @@
   width: 22px;
   height: 2px;
   background-color: $secondary-text;
+
+  .dark-mode & {
+    background-color: $white;
+  }
 }
 
 .bottom-sheet__container {

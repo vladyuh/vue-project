@@ -10,8 +10,12 @@
   -ms-user-select: none;
   user-select: none;
   color: $primary-text;
-  width: 100%;
   position: relative;
+  width: 100%;
+
+  .dark-mode & {
+    color: $white;
+  }
 
   &__selected {
     position: relative;
@@ -28,13 +32,28 @@
     height: $inputHeightWithBorder;
     border-radius: 8px;
 
+    .dark-mode & {
+      color: transparentize($white, 0.2);
+      border-color: $white;
+      background-color: $item-bg-dm;
+    }
+
     .custom-select--opened & {
-      border-color: $accent;
+      border-color: $white;
       background: $accent;
+
+      .dark-mode & {
+        border-color: $white;
+        background: $accent-dm;
+      }
     }
 
     .custom-select--with-value & {
       color: $primary-text;
+
+      .dark-mode & {
+        color: $white;
+      }
     }
 
     &--with-icon{
@@ -50,6 +69,10 @@
         width: $iconDimensions;
         height: $iconDimensions;
         color: $primary-text;
+
+        .dark-mode & {
+          color: $white;
+        }
       }
     }
   }
@@ -70,6 +93,11 @@
     border-radius: 8px;
     overscroll-behavior: contain;
 
+    .dark-mode & {
+      background: $accent-dm;
+      color: $white;
+    }
+
     &.open {
       display: block;
     }
@@ -87,6 +115,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     overscroll-behavior: contain;
+
+    .dark-mode & {
+      color: $white;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -114,6 +146,11 @@
     text-align: left;
     border-bottom: 2px solid $secondary-text;
 
+    .dark-mode & {
+      color: $white;
+      border-color:transparentize($white, 0.2)
+    }
+
     &:last-child {
       border-bottom: none;
     }
@@ -122,6 +159,10 @@
     &.active {
       background: rgba(0, 0, 0, 0.05);
       color: $primary-text;
+
+      .dark-mode & {
+        color: $white;
+      }
     }
 
     &-label {
@@ -144,6 +185,10 @@
     color: $primary-text;
     width: 40px;
     padding: 8px;
+
+    .dark-mode & {
+      color: $white;
+    }
 
     &-up {
       transform: scaleY(-1);

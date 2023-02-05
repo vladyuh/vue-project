@@ -22,10 +22,15 @@
   .img-wrp {
     position: relative;
     padding-top: 60%;
-    border-radius: 24px;
+    border-radius: 8px;
     overflow: hidden;
     border: 2px solid $accent;
     background: $item-bg;
+
+    .dark-mode & {
+      border-color: $white;
+      background: $item-bg-dm;
+    }
 
     @include lg {
       position: sticky;

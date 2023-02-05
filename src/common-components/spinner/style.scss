@@ -12,6 +12,10 @@
   border: 2px solid #4a473e;
   animation: spinner-bulqg1 0.8s infinite linear alternate,
   spinner-oaa3wk 1.6s infinite linear;
+
+  .dark-mode & {
+    border-color: lighten(#4a473e, 30%);
+  }
 }
 
 @keyframes spinner-bulqg1 {

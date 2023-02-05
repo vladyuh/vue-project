@@ -16,7 +16,26 @@
           class="top-bar__burger"
           @click="burgerClick"
       />
-      <div class="top-bar__logo">Vue UI Kit</div>
+      <router-link
+          to="/"
+          class="top-bar__logo"
+      >
+        <icon
+            icon-name="logo"
+            width="28"
+            height="28"
+        />
+      </router-link>
+      <switcher
+          v-if="isDesktop"
+          name="dark-mode"
+          id="dark-mode"
+          class="top-bar__dark-mode"
+          @input="changeDarkMode"
+          :value="isDarkMode"
+      >
+        <span>Тёмная тема</span>
+      </switcher>
       <div
           v-if="isDesktop"
           class="top-bar__nav"
@@ -52,6 +71,8 @@
 import {mapGetters} from "vuex";
 import { throttle } from 'lodash'
 import burger from "@/common-components/burger";
+import Icon from "@/common-components/icon"
+import Switcher from "@/common-components/switcher";
 
 
 const CONTENT_RECT_TOP = 56
@@ -59,7 +80,9 @@ const CONTENT_RECT_TOP = 56
 export default {
   name: "top-bar",
   components: {
-    burger
+    burger,
+    Icon,
+    Switcher
   },
   props: {
     links: {
@@ -74,7 +97,8 @@ export default {
       isTop: true,
       previousCoordinates: -CONTENT_RECT_TOP,
       forceShowMenu: false,
-      windowWidth: 0
+      windowWidth: 0,
+      isDarkMode: null
     }
   },
   mounted () {
@@ -82,6 +106,15 @@ export default {
   },
   created () {
     this.$bus.on('set-force-show-topbar', this.setForceShowMenu)
+
+    let darkmode = JSON.parse(localStorage?.getItem('darkmode'))
+
+    if(!darkmode) {
+      localStorage.setItem('darkmode', false)
+      darkmode = false
+    }
+
+    this.isDarkMode = darkmode
   },
   beforeDestroy () {
     this.$bus.off('set-force-show-topbar', this.setForceShowMenu)
@@ -95,6 +128,10 @@ export default {
     },
     setForceShowMenu (value) {
       this.forceShowMenu = !!value
+    },
+    changeDarkMode () {
+      this.isDarkMode = !this.isDarkMode
+      this.$bus.emit('darkmode-change', this.isDarkMode)
     },
     onScroll: throttle(function () {
       if (this.forceShowMenu) {

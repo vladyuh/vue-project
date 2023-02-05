@@ -21,15 +21,10 @@ export default new Vuex.Store({
         label: "Проекты",
         href: "/projects"
       },
-      {
-        iconName: "ic_apps",
-        label: "Компоненты",
-        href: "/styles"
-      },
     ],
     breadcrumbs: [
       { href: '/', text: 'Главная' },
-      { href: '/projects', text: 'Компоненты' },
+      { href: '/styles', text: 'Компоненты' },
     ],
   },
   getters: {

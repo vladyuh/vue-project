@@ -1,54 +1,81 @@
 <template>
   <section
       class="projects-page"
-      v-if="isLoaded"
   >
     <div class="container">
       <back-title
           text="Проекты"
           capitalize
       />
+      <div class="projects-page__filter">
+        <custom-select
+            ref="customSelect"
+            placeholder="Сортировать по:"
+            :options="options"
+            @input="setSelected($event)"
+        />
+      </div>
       <div class="projects-page__list">
         <project-list-item
-            v-for="(project, index) in projects"
+            v-for="(project, index) in filteredProjects"
             :key="index"
             :project="project"
         />
       </div>
     </div>
   </section>
-  <preloader
-      v-else
-      full-page
-      remove-overflow
-  />
 </template>
 
 <script>
 import {mapActions} from "vuex";
 import backTitle from "@/common-components/back-title";
-import Preloader from "@/common-components/preloader";
 import ProjectListItem from "@/views/projects/project-list-item";
+import CustomSelect from "@/common-components/custom-select";
 
 export default {
   name: 'ProjectsView',
   components: {
+    CustomSelect,
     ProjectListItem,
-    Preloader,
     backTitle,
   },
   data() {
     return {
       projects: null,
-      isLoaded: false
+      isLoaded: false,
+      options: [
+        {name: "filter", value: "new", label: "Сначала новые"},
+        {name: "filter", value: "old", label: "Сначала старые"},
+      ],
+      selected: null
     }
   },
   created() {
     this.getProjectsData()
   },
   mounted() {
+    this.selected = JSON.parse(localStorage?.getItem('value'))
+    if(this.selected) {
+      this.$refs.customSelect?.selectOption(this.selected, false)
+    }
   },
-  computed: {},
+  computed: {
+    filteredProjects () {
+
+      const filtered = this.projects
+
+      if(this.selected?.value === 'old') {
+        filtered?.sort((a,b) => a.code - b.code)
+      }
+
+      if(this.selected?.value === 'new') {
+        filtered?.sort((a,b) => b.code - a.code)
+      }
+
+      return filtered
+    }
+  },
+  watch: {},
   methods: {
     ...mapActions(['openModal']),
     getProjectsData() {
@@ -60,6 +87,10 @@ export default {
             this.projects = data
             this.isLoaded = true
           });
+    },
+    setSelected (option) {
+      localStorage.setItem('value', JSON.stringify(option))
+      this.selected = JSON.parse(localStorage.getItem('value'))
     }
   }
 }

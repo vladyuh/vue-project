@@ -24,6 +24,10 @@
     background: $primary-bg;
     z-index: 0;
     transition: all 0.25s ease;
+
+    .dark-mode & {
+      background: $primary-bg-dm;
+    }
   }
 
   &:not(.show-top-bar) {
@@ -51,8 +55,13 @@
   }
 
   &__logo {
-    font-size: 18px;
-    font-weight: 900;
+    color: $secondary-text;
+    display: flex;
+    align-items: center;
+
+    .dark-mode & {
+      color: $white;
+    }
   }
 
   &__nav {
@@ -70,10 +79,18 @@
 
       &:not(.router-link-exact-active):hover {
         color: $secondary-text;
+
+        .dark-mode & {
+          color: darken($white, 10%);
+        }
       }
 
       &.router-link-exact-active {
         color: $secondary-text;
+
+        .dark-mode & {
+          color: darken($white, 10%);
+        }
       }
     }
   }
@@ -82,5 +99,13 @@
     display: flex;
     align-items: center;
     gap: 16px;
+  }
+}
+
+.top-bar__dark-mode {
+  margin-left: 32px;
+
+  .switcher__pseudo-block {
+    border-color: $secondary-text;
   }
 }

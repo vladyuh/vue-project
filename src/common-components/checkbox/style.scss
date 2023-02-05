@@ -38,6 +38,11 @@
         display: inline-block;
         margin-right: 10px;
 
+        .dark-mode & {
+            background-color: $item-bg-dm;
+            border-color: $white;
+        }
+
         &::after {
             content: "";
             position: absolute;
@@ -52,6 +57,10 @@
             border-bottom: 2px solid $secondary-text;
             transform: rotate(0);
             background: transparent no-repeat center;
+
+            .dark-mode & {
+                border-color: $white;
+            }
         }
     }
 
@@ -69,6 +78,11 @@
             background-color: $accent;
             border-color: $accent;
             z-index: 1;
+
+            .dark-mode & {
+                background-color: $accent-dm;
+                border-color: $white;
+            }
         }
 
         &:checked~.checkbox__elem:after {

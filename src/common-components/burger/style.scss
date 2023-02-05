@@ -6,5 +6,9 @@
 .burger__icon {
   display: block;
   width: auto;
-  color: $black;
+  color: $primary-text;
+
+  .dark-mode & {
+    color: $white;
+  }
 }

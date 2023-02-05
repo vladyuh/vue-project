@@ -11,6 +11,10 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 
+  .dark-mode & {
+    background: $item-bg-dm;
+  }
+
   &::-webkit-scrollbar {
     display: none;
     -webkit-appearance: none;
@@ -35,10 +39,18 @@
 
   &.toggles__item--active {
     background: $accent;
+
+    .dark-mode & {
+      background: $accent-dm;
+    }
   }
 
   &:not(.toggles__item--active):hover {
     background: $accent;
+
+    .dark-mode & {
+      background: $accent-dm;
+    }
   }
 }
 
@@ -56,8 +68,16 @@
   white-space: nowrap;
   color: $primary-text;
 
+  .dark-mode & {
+    color: $white;
+  }
+
   .toggles__item:hover &,
   .toggles__item--active & {
     color: $primary-text;
+
+    .dark-mode & {
+      color: $white;
+    }
   }
 }

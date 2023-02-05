@@ -2,6 +2,10 @@
   <div class="styles styles-container">
     <section>
       <div class="container">
+        <back-title
+            text="Компоненты"
+            capitalize
+        />
         <section-header
             :level="1"
             text="Заголовок H1"
@@ -45,15 +49,6 @@
               height="24"
           />
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <h2>Back Title</h2>
-        <back-title
-            text="Назад"
-            capitalize
-        />
       </div>
     </section>
     <section>

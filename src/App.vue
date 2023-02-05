@@ -73,6 +73,7 @@ export default {
     return {
       isPositionFixed: false,
       isModalOpened: false,
+      isDarkMode: null,
       modalProps: {
         type: Object,
         default: () => ({})
@@ -93,10 +94,21 @@ export default {
         oldRoute: oldValue,
         value: 1
       })
-    }
+    },
   },
   created() {
     this.setHistoryStartValues()
+
+    let darkmode = JSON.parse(localStorage?.getItem('darkmode'))
+
+    if(!darkmode) {
+      localStorage.setItem('darkmode', false)
+      darkmode = false
+    }
+
+    this.isDarkMode = darkmode
+
+    this.toggleDarkMode()
 
     window.addEventListener('resize', this.onResize, { passive: true })
     this.changeSizeFlag()
@@ -118,6 +130,11 @@ export default {
       this.closeMenu()
       this.$bus.emit('remove-position-fixed')
     })
+    this.$bus.on('darkmode-change', (value) => {
+      this.isDarkMode = value
+      localStorage.setItem('darkmode', value)
+      this.toggleDarkMode()
+    })
 
     this.startHistoryLength = 0
   },
@@ -133,6 +150,11 @@ export default {
     ...mapActions(['openMenu', 'closeMenu']),
     closeMobileMenu() {
       this.$bus.emit('close-mobile-menu')
+    },
+    toggleDarkMode () {
+      this.isDarkMode
+          ? document.documentElement.classList.add('dark-mode')
+          : document.documentElement.classList.remove('dark-mode')
     },
     onResize: debounce(function () {
       if (this.windowWidth !== window.innerWidth) {

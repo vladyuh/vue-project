@@ -64,7 +64,7 @@
                 v-for="(option, index) in options"
                 :key="index"
                 :class="['custom-select__option', { 'active': option.value === selectedValue }]"
-                @click.stop="selectOption(option)"
+                @click.stop="selectOption(option, true)"
             >
               <label
                   class="custom-select__option-label pointer-event-none"
@@ -138,11 +138,14 @@ export default {
     document.body.removeEventListener('mousedown', this.clickOutside)
   },
   methods: {
-    selectOption (option) {
+    selectOption (option, toggle) {
       this.selectedValue = option.value
       this.selectedLabel = option.label
       this.$emit('input', option)
-      this.toggleSelect()
+
+      if(toggle) {
+        this.toggleSelect()
+      }
     },
     toggleSelect () {
       this.showOptions = !this.showOptions

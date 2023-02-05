@@ -17,8 +17,16 @@
   transition: all 0.25s ease-in-out;
   box-shadow: $elevation;
 
+  .dark-mode & {
+    background-color: $accent-dm;
+  }
+
   &:hover {
-    background-color: darken($accent, 10%);
+    background-color: lighten($accent, 10%);
+
+    .dark-mode & {
+      background-color: lighten($accent-dm, 10%);
+    }
   }
 
   &.btn--dashed {
@@ -28,11 +36,12 @@
 
     &:hover {
       opacity: 0.7;
+      background-color: transparent;
     }
   }
 
   &.btn--no-rounded {
-    border-radius: 0;
+    border-radius: 8px;
   }
 
   &.btn--bordered {
@@ -80,8 +89,16 @@
   text-transform: uppercase;
   z-index: 3;
 
+  .dark-mode & {
+    color: $white;
+  }
+
   .btn--dashed & {
     color: $primary-text;
+
+    .dark-mode & {
+      color: $white;
+    }
 
     &:before {
       content: '';
@@ -90,15 +107,27 @@
       left: 0;
       width: 100%;
       border-bottom: 2px dashed $accent;
+
+      .dark-mode & {
+        border-color: $accent-dm;
+      }
     }
   }
 
   .btn--bordered & {
     color: $primary-text;
+
+    .dark-mode & {
+      color: $white;
+    }
   }
 
   .btn--bordered:hover & {
     color: $primary-text;
+
+    .dark-mode & {
+      color: $white;
+    }
   }
 }
 
@@ -143,9 +172,19 @@
   border: 2px solid $accent;
   box-shadow: none;
 
+  .dark-mode & {
+    border-color: $accent-dm;
+    background-color: transparent;
+  }
+
   &:hover {
     border-color: $accent-hover;
     background-color: $accent-hover;
+
+    .dark-mode & {
+      border-color: $accent-hover-dm;
+      background-color: lighten($accent-dm, 10%);
+    }
   }
 }
 
@@ -153,4 +192,10 @@
   position: relative;
   margin-right: 10px;
   z-index: 3;
+  width: 20px;
+  height: 20px;
+
+  .dark-mode & {
+    color: $white;
+  }
 }

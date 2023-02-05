@@ -17,6 +17,10 @@
   z-index: 1001;
   transform: translateZ(0);
   background: $item-bg;
+
+  .dark-mode & {
+    background: $item-bg-dm;
+  }
 }
 
 .main-preloader__inner {

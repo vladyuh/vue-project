@@ -12,6 +12,7 @@ module.exports = defineConfig({
   },
 
   pwa: {
+    name: 'Yukhnovski',
     themeColor: '#000000',
     mstTileColor: '#000000',
     appleMobileWebAppStatusBarStyle: 'black',
@@ -22,10 +23,16 @@ module.exports = defineConfig({
     manifestOptions: {
       scope: "/",
       start_url: "/",
+      background_color: "#FFF8E1",
       icons: [
         {
           src: "./img/icons/android-chrome-192x192.png",
           sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "./img/icons/android-chrome-512x512.png",
+          sizes: "512x512",
           type: "image/png",
         },
         {
