@@ -44,12 +44,12 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: $accent;
+    background: $color-item-secondary;
     z-index: -1;
     opacity: 0;
 
     .dark-mode & {
-      background: $accent-dm;
+      background: $color-item-secondary-dm;
     }
   }
 
@@ -68,10 +68,10 @@
     }
 
     .back-title__button-text {
-      color: $primary-text;
+      color: $color-text-primary;
 
       .dark-mode & {
-        color: $white;
+        color: $color-text-primary-dm;
       }
     }
 
@@ -85,11 +85,11 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  color: $primary-text;
+  color: $color-text-primary;
   transform: translateZ(0);
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary-dm;
   }
 
   .fixed & {
@@ -119,5 +119,4 @@
     padding-left: 0;
     padding-right: 0;
   }
-
 }

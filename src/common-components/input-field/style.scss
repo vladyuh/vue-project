@@ -21,46 +21,45 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all 0.25s ease;
-  border: 2px solid $accent;
+  border: 2px solid transparent;
   border-radius: 8px;
   width: 100%;
   padding: $defaultPadding;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: 600;
-  color: $secondary-text;
-  background-color: $item-bg;
+  color: $color-text-primary;
+  background-color: $color-input-bg;
 
   .dark-mode & {
-    color: $white;
-    background-color: $item-bg-dm;
-    border-color: $white;
+    color: $color-text-primary-dm;
+    background-color: $color-input-bg-dm;
   }
 
   &:focus,
   &:active {
-    color: $primary-text;
-    background: $accent;
+    color: $color-text-primary;
+    border-color: $color-accent-primary;
 
     .dark-mode & {
       color: $white;
-      background: $accent-dm;
+      border-color: $color-accent-primary-dm;
     }
   }
 
   &:valid {
-    color: $primary-text;
+    color: $color-text-primary;
 
     .dark-mode & {
-      color: $white;
+      color: $color-text-primary-dm;
     }
   }
 
   &::placeholder {
-    color: $secondary-text;
+    color: $color-text-primary;
 
     .dark-mode & {
-      color: transparentize($white, 0.3);
+      color: $color-text-primary-dm;
     }
   }
 }
@@ -77,10 +76,10 @@ textarea {
       align-items: center;
       width: $iconDimensions;
       height: $iconDimensions;
-      color: $primary-text;
+      color: $color-text-primary;
 
       .dark-mode & {
-        color: $white;
+        color: $color-text-primary-dm;
       }
     }
 
@@ -103,10 +102,10 @@ textarea {
       align-items: center;
       width: $iconDimensions;
       height: $iconDimensions;
-      color: $primary-text;
+      color: $color-text-primary;
 
       .dark-mode & {
-        color: $white;
+        color: $color-text-primary-dm;
       }
     }
 

@@ -4,15 +4,14 @@
   display: inline-flex;
   align-items: center;
   margin-bottom: 16px;
-  background: $item-bg;
-  border-radius: 40px;
+  background: $color-bg-primary;
   max-width: 100%;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
   .dark-mode & {
-    background: $item-bg-dm;
+    background: $color-bg-primary-dm;
   }
 
   &::-webkit-scrollbar {
@@ -31,25 +30,41 @@
   min-width: 98px;
   height: 52px;
   padding: 0 32px;
-  border-radius: 40px;
   cursor: pointer;
   flex: 1 0 auto;
   user-select: none;
   transition: all 0.25s ease;
+  border: 2px solid $color-accent-primary;
+
+  .dark-mode & {
+    border-color: $color-text-primary-dm;
+  }
+
+  &:first-child {
+    border-radius: 40px 0 0 40px;
+  }
+
+  &:not(:first-child) {
+    margin-left: -2px;
+  }
+
+  &:last-child {
+    border-radius: 0 40px 40px 0;
+  }
 
   &.toggles__item--active {
-    background: $accent;
+    background: $color-accent-secondary;
 
     .dark-mode & {
-      background: $accent-dm;
+      background: $color-accent-secondary-dm;
     }
   }
 
   &:not(.toggles__item--active):hover {
-    background: $accent;
+    background: $color-accent-secondary;
 
     .dark-mode & {
-      background: $accent-dm;
+      background: $color-accent-secondary-dm;
     }
   }
 }
@@ -66,18 +81,18 @@
   font-weight: 600;
   text-align: center;
   white-space: nowrap;
-  color: $primary-text;
+  color: $color-text-primary;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary-dm;
   }
 
   .toggles__item:hover &,
   .toggles__item--active & {
-    color: $primary-text;
+    color: $color-text-primary;
 
     .dark-mode & {
-      color: $white;
+      color: $color-text-primary-dm;
     }
   }
 }

@@ -9,12 +9,12 @@
   height: 16px;
   margin: -8px 0 0 -8px;
   border-radius: 50%;
-  border: 2px solid #4a473e;
+  border: 2px solid $color-text-primary-dm;
   animation: spinner-bulqg1 0.8s infinite linear alternate,
   spinner-oaa3wk 1.6s infinite linear;
 
   .dark-mode & {
-    border-color: lighten(#4a473e, 30%);
+    border-color: $color-text-primary;
   }
 }
 

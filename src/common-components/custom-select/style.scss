@@ -9,50 +9,47 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: $primary-text;
+  color: $color-text-primary;
   position: relative;
   width: 100%;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary-dm;
   }
 
   &__selected {
     position: relative;
     transition: all 0.25s ease;
-    border: 2px solid $accent;
+    border: 2px solid transparent;
     width: 100%;
     outline: none;
     padding: $defaultPadding 40px $defaultPadding $defaultPadding;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: 600;
-    color: transparentize($primary-text, 0.2);
-    background-color: $item-bg;
+    color: $color-text-primary;
+    background-color: $color-input-bg;
     height: $inputHeightWithBorder;
     border-radius: 8px;
 
     .dark-mode & {
-      color: transparentize($white, 0.2);
-      border-color: $white;
-      background-color: $item-bg-dm;
+      color: $color-text-primary-dm;
+      background-color: $color-input-bg-dm;
     }
 
     .custom-select--opened & {
-      border-color: $white;
-      background: $accent;
+      border-color: $color-accent-primary;
 
       .dark-mode & {
-        border-color: $white;
-        background: $accent-dm;
+        border-color: $color-accent-primary-dm;
       }
     }
 
     .custom-select--with-value & {
-      color: $primary-text;
+      color: $color-text-primary;
 
       .dark-mode & {
-        color: $white;
+        color: $color-text-primary-dm;
       }
     }
 
@@ -68,10 +65,10 @@
         align-items: center;
         width: $iconDimensions;
         height: $iconDimensions;
-        color: $primary-text;
+        color: $color-text-primary;
 
         .dark-mode & {
-          color: $white;
+          color: $color-text-primary-dm;
         }
       }
     }
@@ -87,15 +84,17 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background: $accent;
-    color: $black;
+    background: $color-input-bg;
+    color: $color-text-primary;
     width: 100%;
     border-radius: 8px;
     overscroll-behavior: contain;
+    box-shadow: $box-elevation;
 
     .dark-mode & {
-      background: $accent-dm;
-      color: $white;
+      background: $color-input-bg-dm;
+      color: $color-text-primary-dm;
+      box-shadow: $box-elevation-dm;
     }
 
     &.open {
@@ -110,14 +109,14 @@
     padding: 0;
     text-align: left;
     border: none;
-    color: $primary-text;
+    color: $color-text-primary;
     cursor: pointer;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overscroll-behavior: contain;
 
     .dark-mode & {
-      color: $white;
+      color: $color-text-primary-dm;
     }
 
     &::-webkit-scrollbar {
@@ -142,13 +141,13 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: $secondary-text;
+    color: $color-text-primary;
     text-align: left;
-    border-bottom: 2px solid $secondary-text;
+    border-bottom: 2px solid $color-text-primary;
 
     .dark-mode & {
-      color: $white;
-      border-color:transparentize($white, 0.2)
+      color: $color-text-primary-dm;
+      border-color: $color-text-primary-dm;
     }
 
     &:last-child {
@@ -158,10 +157,10 @@
     &:hover,
     &.active {
       background: rgba(0, 0, 0, 0.05);
-      color: $primary-text;
+      color: $color-text-primary;
 
       .dark-mode & {
-        color: $white;
+        color: $color-text-primary-dm;
       }
     }
 
@@ -182,12 +181,12 @@
     bottom: 0;
     right: 0;
     transition: all 0.25s ease;
-    color: $primary-text;
+    color: $color-text-primary;
     width: 40px;
     padding: 8px;
 
     .dark-mode & {
-      color: $white;
+      color: $color-text-primary-dm;
     }
 
     &-up {

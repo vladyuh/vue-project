@@ -10,7 +10,6 @@
         margin: 19px 0;
         font-size: 15px;
         line-height: 180%;
-        color: $primary-text;
 
         @media screen and (min-width: 376px) {
             font-size: 16px;
@@ -18,7 +17,6 @@
     }
 
     a {
-        color: $primary-text;
         font-size: 15px;
         font-weight: 600;
         line-height: 180%;
@@ -43,7 +41,6 @@
             counter-increment: item;
             font-size: 15px;
             line-height: 180%;
-            color: $primary-text;
 
             p {
                 margin: 5px 0;
@@ -63,7 +60,6 @@
             font-weight: bold;
             font-size: 14px;
             line-height: 180%;
-            color: $primary-text;
         }
     }
 
@@ -75,7 +71,6 @@
             position: relative;
             font-size: 15px;
             line-height: 180%;
-            color: $primary-text;
 
             @media screen and (min-width: 577px) {
                 padding-left: 46px;
@@ -90,7 +85,6 @@
             display: block;
             width: 7px;
             height: 7px;
-            background: $primary-text;
             border-radius: 50%;
         }
     }
@@ -103,28 +97,33 @@
     table {
         width: 100%;
         border-collapse: collapse;
+        background: $color-bg-primary;
+
+        .dark-mode & {
+            background: $color-bg-primary-dm;
+        }
 
         tr {
             &.head {
-                background: $item-bg;
-                font-size: 14px;
+                background: $color-item-secondary;
+                font-size: 16px;
                 line-height: 180%;
 
+                .dark-mode & {
+                    background: $color-item-secondary-dm;
+                }
+
                 th {
-                    color: $primary-text;
-                    padding: 13px 20px;
+                    font-weight: 600;
                 }
             }
 
             th, td {
                 padding: 18px 20px;
-                border: 1px solid $color-border;
-                font-size: 14px;
+                border: 2px solid $color-border;
+                font-size: 16px;
                 line-height: 150%;
                 font-weight: normal;
-            }
-
-            th:first-child {
                 text-align: left;
             }
 

@@ -2,19 +2,26 @@
 $black: #000;
 $white: #fff;
 $color-border: #D3D9EB;
-//myu light theme
-$accent: rgb(253, 230, 148);
-$accent-hover: rgba(253, 230, 148, 0.63);
-$item-bg: rgb(250, 240, 202);
-$primary-bg: rgb(255, 248, 225);
-$primary-text: rgb(31, 28, 21);
-$secondary-text: rgb(74, 71, 62);
-$elevation: rgb(191 180 140 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
-//myu dark theme
-$accent-dm: #352A00;
-$accent-hover-dm: rgba(253, 230, 148, 0.63);
-$item-bg-dm: #2B2606;
-$primary-bg-dm: #24200F;
+//M3 theme light
+$color-bg-primary: #FFFBFF;
+$color-text-primary: #201A19;
+$color-text-secondary: #241a00;
+$color-accent-primary: #A03F28;
+$color-accent-secondary: #FFDAD2;
+$color-item-primary: #F9E09F;
+$color-item-secondary: #FAF1F4;
+$color-input-bg: #EEE9ED;
+$box-elevation: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+//M3 theme dark
+$color-bg-primary-dm: #201A19;
+$color-text-primary-dm: #EDE0DD;
+$color-text-secondary-dm: #ffdad2;
+$color-accent-primary-dm: #FFB4A3;
+$color-accent-secondary-dm: #5F3F37;
+$color-item-primary-dm: #554512;
+$color-item-secondary-dm: #2B2220;
+$color-input-bg-dm: #282221;
+$box-elevation-dm: 0px 2px 8px -1px rgba(0,0,0,0.2), 0px 4px 9px 0px rgba(0,0,0,0.14), 0px 1px 15px 0px rgba(0,0,0,0.12);
 
 /* inputs */
 $font-size: 16px;

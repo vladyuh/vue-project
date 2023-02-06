@@ -1,16 +1,6 @@
 @import "../helpers/variables";
 
 :root {
-  --black: #000;
-  --white: #fff;
-  --color-border: #D3D9EB;
-  --accent: rgb(253, 230, 148);
-  --accent-hover: rgba(253, 230, 148, 0.63);
-  --item-bg: rgb(250, 240, 202);
-  --primary-bg: rgb(255, 248, 225);
-  --primary-text: rgb(31, 28, 21);
-  --secondary-text: rgb(74, 71, 62);
-  --elevation: rgb(191 180 140 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
 }
 
 html {
@@ -18,15 +8,15 @@ html {
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
-  background: $primary-bg;
-  color: $primary-text;
+  background: $color-bg-primary;
+  color: $color-text-primary;
   letter-spacing: normal;
   font-family: 'Mulish', sans-serif;
   scroll-behavior: smooth;
 
   &.dark-mode {
-    background: $primary-bg-dm;
-    color: $white
+    background: $color-bg-primary-dm;
+    color: $color-text-primary-dm;
   }
 }
 
@@ -56,11 +46,11 @@ ul {
 }
 
 a {
-  color: $primary-text;
+  color: $color-text-primary;
   text-decoration: none;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary-dm;
   }
 }
 

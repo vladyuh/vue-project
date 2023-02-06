@@ -27,5 +27,9 @@
 .vb-dragger-styler {
   height: 100%;
   border-radius: 3px;
-  background-color: transparentize($secondary-text, 0.25);
+  background-color: $color-accent-primary;
+
+  .dark-mode & {
+    background-color: $color-accent-primary-dm;
+  }
 }

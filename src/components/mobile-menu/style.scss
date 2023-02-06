@@ -7,12 +7,12 @@
   left: 0;
   bottom: 0;
   width: 300px;
-  background: $primary-bg;
+  background: $color-bg-primary;
   transition: transform 0.3s ease;
   z-index: 100;
 
   .dark-mode & {
-    background: $primary-bg-dm;
+    background: $color-bg-primary-dm;
   }
 
   &__overlay{
@@ -59,20 +59,20 @@
       margin: 0 -16px;
       min-height: 48px;
       font-weight: 600;
-      color: $secondary-text;
+      color: $color-text-primary;
 
       .dark-mode & {
-        color: $white;
+        color: $color-text-primary-dm;
       }
 
       &.router-link-exact-active {
         border-radius: 100px;
-        background: $item-bg;
-        color: $primary-text;
+        background: $color-item-secondary;
+        color: $color-text-primary;
 
         .dark-mode & {
-          background: $item-bg-dm;
-          color: $white;
+          background: $color-item-secondary-dm;
+          color: $color-text-primary-dm;
         }
       }
 

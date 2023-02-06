@@ -18,14 +18,14 @@
 .projects-page__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  width: 100%;
+  width: calc(100% + 16px);
+  margin: -8px;
 }
 
 .projects-list__item {
   position: relative;
-  width: 100%;
-  flex-grow: 1;
+  width: calc(100% - 16px);
+  margin: 8px;
 
   @include md {
     width: calc(100% / 2 - 16px);
@@ -38,40 +38,40 @@
 
 .projects-list__item-wr {
   padding: 24px;
-  background: $item-bg;
+  background: $color-item-secondary;
   border-radius: 24px;
   z-index: 1;
   transition: all 0.25s ease;
 
   .dark-mode & {
-    background: $item-bg-dm;
+    background: $color-item-secondary-dm;
   }
 
   &:hover {
-    background: darken($item-bg, 5%);
+    background: darken($color-item-secondary, 5%);
 
     .dark-mode & {
-      background: lighten($item-bg-dm, 5%);
+      background: lighten($color-item-secondary-dm, 5%);
     }
   }
 }
 
 .projects-list__item-link {
   font-weight: 600;
-  color: $secondary-text;
+  color: $color-text-secondary;
   margin-bottom: auto;
 
   .dark-mode & {
-    color: transparentize($white, 0.2);
+    color: $color-text-secondary-dm;
   }
 }
 
 .projects-list__item-title {
-  color: $primary-text;
+  color: $color-text-primary;
   margin-bottom: 0;
 
   .dark-mode & {
-   color: $white;
+   color: $color-text-primary-dm;
   }
 }
 
@@ -80,11 +80,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: $primary-text;
+  color: $color-text-primary;
   margin: 8px 0 0 0;
   width: 100%;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary-dm;
   }
 }

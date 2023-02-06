@@ -10,28 +10,26 @@
   height: 52px;
   padding: 0 32px;
   border: none;
-  background-color: $accent;
+  background-color: $color-accent-primary;
   border-radius: 40px;
   outline: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  box-shadow: $elevation;
 
   .dark-mode & {
-    background-color: $accent-dm;
+    background-color: $color-accent-primary-dm;
   }
 
   &:hover {
-    background-color: lighten($accent, 10%);
+    box-shadow: $box-elevation;
 
     .dark-mode & {
-      background-color: lighten($accent-dm, 10%);
+      box-shadow: $box-elevation-dm;
     }
   }
 
   &.btn--dashed {
     background-color: transparent;
-    padding: 0;
     box-shadow: none !important;
 
     &:hover {
@@ -42,10 +40,6 @@
 
   &.btn--no-rounded {
     border-radius: 8px;
-  }
-
-  &.btn--bordered {
-    box-shadow: none !important;
   }
 
   &.disabled,
@@ -83,21 +77,21 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
-  color: $primary-text;
+  color: $white;
   letter-spacing: normal;
   text-align: center;
   text-transform: uppercase;
   z-index: 3;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary;
   }
 
   .btn--dashed & {
-    color: $primary-text;
+    color: $color-accent-primary;
 
     .dark-mode & {
-      color: $white;
+      color: $color-accent-primary-dm;
     }
 
     &:before {
@@ -106,27 +100,19 @@
       bottom: -8px;
       left: 0;
       width: 100%;
-      border-bottom: 2px dashed $accent;
+      border-bottom: 2px dashed $color-accent-primary;
 
       .dark-mode & {
-        border-color: $accent-dm;
+        border-color: $color-accent-primary-dm;
       }
     }
   }
 
   .btn--bordered & {
-    color: $primary-text;
+    color: $color-accent-primary;
 
     .dark-mode & {
-      color: $white;
-    }
-  }
-
-  .btn--bordered:hover & {
-    color: $primary-text;
-
-    .dark-mode & {
-      color: $white;
+      color: $color-accent-primary-dm;
     }
   }
 }
@@ -136,55 +122,13 @@
   opacity: 0;
 }
 
-.btn--gradient {
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(75% 100% at 50.34% 100%, #2094FF 0%, #0B3DDD 100%);
-    z-index: 1;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(75% 100% at 50.34% 100%, #D7DFFF 0%, #4765D6 53.25%, #183CC8 100%);
-    opacity: 0;
-    z-index: 2;
-  }
-
-  .no-touch &:hover {
-    &:after {
-      opacity: 1;
-    }
-  }
-}
-
 .btn--bordered {
   background-color: transparent;
-  border: 2px solid $accent;
-  box-shadow: none;
+  border: 2px solid $color-accent-primary;
 
   .dark-mode & {
-    border-color: $accent-dm;
+    border-color: $color-accent-primary-dm;
     background-color: transparent;
-  }
-
-  &:hover {
-    border-color: $accent-hover;
-    background-color: $accent-hover;
-
-    .dark-mode & {
-      border-color: $accent-hover-dm;
-      background-color: lighten($accent-dm, 10%);
-    }
   }
 }
 
@@ -194,8 +138,9 @@
   z-index: 3;
   width: 20px;
   height: 20px;
+  color: $white;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary;
   }
 }

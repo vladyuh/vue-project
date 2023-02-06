@@ -48,23 +48,23 @@
   height: 24px;
   display: inline-block;
   border-radius: 20px;
-  background-color: $item-bg;
+  background-color: $color-accent-secondary;
   pointer-events: none;
-  border: 2px solid $accent;
+  border: 2px solid $color-accent-primary;
   transition: all 0.25s ease;
 
   .dark-mode & {
-    background-color: $item-bg-dm;
-    border-color: $white;
+    background-color: $color-accent-secondary-dm;
+    border: 2px solid $color-accent-primary-dm;
   }
 
   .switcher__ch:checked ~ & {
-    background-color: $accent;
-    border: 2px solid $accent;
+    background-color: $color-accent-primary;
+    border: 2px solid $color-accent-primary;
 
     .dark-mode & {
-      background-color: $accent-dm;
-      border-color: $white;
+      background-color: $color-accent-primary-dm;
+      border: 2px solid $color-accent-primary-dm;
     }
 
     .switcher.disabled & {
@@ -83,22 +83,22 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: $secondary-text;
+    background-color: $color-text-primary;
     transition: all 0.25s ease;
     opacity: 0.9;
 
     .dark-mode & {
-      background-color: $white;
+      background-color: $color-text-primary-dm;
     }
 
     .switcher__ch:checked ~ & {
       left: auto;
       right: 2px;
-      background: $secondary-text;
+      background: $color-text-primary-dm;
       opacity: 1;
 
       .dark-mode & {
-        background: $white;
+        background: $color-text-primary;
       }
     }
   }
@@ -120,18 +120,18 @@
   font-size: 16px;
   line-height: 1.5;
   font-weight: 600;
-  color: $primary-text;
+  color: $color-text-primary;
   transition: all .25s ease-out;
 
   .dark-mode & {
-    color: $white;
+    color: $color-text-primary-dm;
   }
 
   .disabled & {
-    color: transparentize($primary-text, 0.7);
+    color: transparentize($color-text-primary, 0.7);
 
     .dark-mode & {
-      color: transparentize($white, 0.7)
+      color: transparentize($color-text-primary-dm, 0.7)
     }
   }
 }

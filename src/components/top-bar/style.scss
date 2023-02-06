@@ -21,12 +21,12 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: $primary-bg;
+    background: $color-bg-primary;
     z-index: 0;
     transition: all 0.25s ease;
 
     .dark-mode & {
-      background: $primary-bg-dm;
+      background: $color-bg-primary-dm;
     }
   }
 
@@ -55,12 +55,12 @@
   }
 
   &__logo {
-    color: $secondary-text;
+    color: $color-text-primary;
     display: flex;
     align-items: center;
 
     .dark-mode & {
-      color: $white;
+      color: $color-text-primary-dm;
     }
   }
 
@@ -78,18 +78,18 @@
       font-weight: 600;
 
       &:not(.router-link-exact-active):hover {
-        color: $secondary-text;
+        color: darken($color-text-secondary, 20%);
 
         .dark-mode & {
-          color: darken($white, 10%);
+          color: lighten($color-text-secondary-dm, 20%);
         }
       }
 
       &.router-link-exact-active {
-        color: $secondary-text;
+        color: darken($color-text-secondary, 20%);
 
         .dark-mode & {
-          color: darken($white, 10%);
+          color: lighten($color-text-secondary-dm, 20%);
         }
       }
     }
@@ -104,8 +104,7 @@
 
 .top-bar__dark-mode {
   margin-left: 32px;
-
-  .switcher__pseudo-block {
-    border-color: $secondary-text;
-  }
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
