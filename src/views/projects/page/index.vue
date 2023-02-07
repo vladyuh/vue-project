@@ -4,9 +4,9 @@
       class="project-page-detail"
   >
     <div class="container">
-      <back-title
+      <section-header
+          :level="2"
           :text="project?.title"
-          capitalize
       />
     </div>
     <div v-if="isLoaded" class="container project-container">
@@ -40,7 +40,6 @@
 
 <script>
 import {mapActions} from "vuex";
-import backTitle from "@/common-components/back-title";
 import sectionHeader from "@/common-components/section-header";
 import Btn from "@/common-components/btn"
 import Preloader from "@/common-components/preloader"
@@ -48,7 +47,6 @@ import Preloader from "@/common-components/preloader"
 export default {
   name: 'ProjectsPageView',
   components: {
-    backTitle,
     sectionHeader,
     Btn,
     Preloader

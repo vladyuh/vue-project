@@ -2,10 +2,6 @@
   <div class="styles styles-container">
     <section>
       <div class="container">
-        <back-title
-            text="Компоненты"
-            capitalize
-        />
         <section-header
             :level="1"
             text="Заголовок H1"
@@ -279,7 +275,6 @@ import radio from "@/common-components/radio";
 import Toggles from "@/common-components/toggles";
 import BottomSheet from "@/common-components/bottom-sheet";
 import Switcher from "@/common-components/switcher";
-import backTitle from "@/common-components/back-title";
 import sectionHeader from "@/common-components/section-header";
 import Icon from "@/common-components/icon";
 
@@ -296,7 +291,6 @@ export default {
     Btn,
     InputField,
     radio,
-    backTitle,
     sectionHeader
   },
   data() {

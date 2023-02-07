@@ -109,65 +109,83 @@
   },
   {
     "code": "13",
+    "title": "FABERGE",
+    "image": "/img/projects/12-1.png",
+    "description": "Faberge — банкетный зал в Могилёве с концептуальной авторской кухней и безупречным сервисом.",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации",
+    "url": "/projects/13",
+    "link": "faberge.by"
+  },
+  {
+    "code": "14",
     "title": "Food Expert",
     "image": "/img/projects/13.png",
     "description": "Конструктор прибыльной франшизы ресторанных и ритейл брендов. Находится в стадии тестирования заказчиком",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один",
-    "url": "/projects/13",
+    "url": "/projects/14",
     "link": "food-expert.org"
   },
   {
-    "code": "14",
+    "code": "15",
     "title": "TUDARU",
     "image": "/img/projects/14.png",
     "description": "Туристическое агентство TUDARU. Находится в стадии тестирования заказчиком",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один",
-    "url": "/projects/14",
+    "url": "/projects/15",
     "link": "tudaru.ru"
   },
   {
-    "code": "15",
+    "code": "16",
     "title": "Doctor Ron",
     "image": "/img/projects/15.png",
     "description": "Институт нитевой имплантологии. Находится в стадии backend - разработки",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации",
-    "url": "/projects/15",
+    "url": "/projects/16",
     "link": "drron.ru"
   },
   {
-    "code": "16",
+    "code": "17",
     "title": "Autofind",
     "image": "/img/projects/16.png",
     "description": "Личный кабинет по подбору автомобилей, компания “Autofind. Находится в стадии тестирования заказчиком",
     "dev": "Progressive Web App. Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации.",
-    "url": "/projects/16",
+    "url": "/projects/17",
     "link": "autos.fvds.ru"
   },
   {
-    "code": "17",
+    "code": "18",
     "title": "Евромедика",
     "image": "/img/projects/17.png",
     "description": "Личный кабинет пациента клиники “Евромедика”, реализованный на фреймворке Vue.js. Находится в стадии backend - разработки",
     "dev": "Progressive Web App. Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vue.js 2 + Vue Router",
-    "url": "/projects/17",
+    "url": "/projects/18",
     "link": "evromedica.fvds.ru/lk"
   },
   {
-    "code": "18",
+    "code": "19",
     "title": "LDMU",
     "image": "/img/projects/18.png",
     "description": "LDMU - переезды в США. Находится в стадии frontend - разработки",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации.",
-    "url": "/projects/18",
+    "url": "/projects/19",
     "link": "ld-movers.com"
   },
   {
-    "code": "19",
+    "code": "20",
+    "title": "Наш Прокат",
+    "image": "/img/projects/20.png",
+    "description": "Наш Прокат - аренда инструмента, стройоборудования и расходников",
+    "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для автоматизации",
+    "url": "/projects/20",
+    "link": "nashprokat.by"
+  },
+  {
+    "code": "21",
     "title": "Promicom",
     "image": "/img/projects/19.png",
     "description": "Promicom - разработка и продвижение сайтов. Осуществляет полный цикл разработки веб-проектов и сервисов, а также их комплексное продвижение в интернете.",
     "dev": "Верстка по макетам из Figma. Верстка на HTML5/CSS3, препроцессор SASS в синтаксисе SCSS. Front-end на Vanilla JS, Gulp для минификация CSS и JS кода, для работы с изображениями, оптимизации и объединения отдельных файлов проекта в один.",
-    "url": "/projects/19",
+    "url": "/projects/21",
     "link": "promicom.ru"
   }
 ]

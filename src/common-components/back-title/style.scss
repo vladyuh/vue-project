@@ -35,7 +35,7 @@
   width: 100%;
   padding: 28px 0 28px 0;
   z-index: 2;
-  transition: all 0.25s ease;
+  transition: top, padding 0.25s ease;
 
   &:before {
     content: '';
@@ -58,6 +58,11 @@
     top: 0;
     padding-top: 8px;
     padding-bottom: 8px;
+    box-shadow: $box-elevation;
+
+    .dark-mode & {
+      box-shadow: $box-elevation-dm;
+    }
 
     &:before {
       opacity: 1;

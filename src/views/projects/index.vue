@@ -1,14 +1,16 @@
 <template>
   <section
+      v-if="isLoaded"
       class="projects-page"
   >
     <div class="container">
-      <back-title
-          text="Проекты"
-          capitalize
+      <section-header
+        :level="2"
+        text="Проекты"
       />
       <div class="projects-page__filter">
         <custom-select
+            v-show="false"
             ref="customSelect"
             placeholder="Сортировать по:"
             :options="options"
@@ -24,20 +26,27 @@
       </div>
     </div>
   </section>
+  <preloader
+      v-else
+      full-page
+      remove-overflow
+  />
 </template>
 
 <script>
 import {mapActions} from "vuex";
-import backTitle from "@/common-components/back-title";
 import ProjectListItem from "@/views/projects/project-list-item";
 import CustomSelect from "@/common-components/custom-select";
+import SectionHeader from "@/common-components/section-header";
+import Preloader from "@/common-components/preloader";
 
 export default {
   name: 'ProjectsView',
   components: {
+    SectionHeader,
     CustomSelect,
     ProjectListItem,
-    backTitle,
+    Preloader
   },
   data() {
     return {
@@ -53,12 +62,7 @@ export default {
   created() {
     this.getProjectsData()
   },
-  mounted() {
-    this.selected = JSON.parse(localStorage?.getItem('value'))
-    if(this.selected) {
-      this.$refs.customSelect?.selectOption(this.selected, false)
-    }
-  },
+  mounted() {},
   computed: {
     filteredProjects () {
 
@@ -75,7 +79,20 @@ export default {
       return filtered
     }
   },
-  watch: {},
+  watch: {
+    isLoaded: {
+      immediate: true,
+      handler: async function (value) {
+        if (value) {
+          await this.$nextTick()
+          this.selected = JSON.parse(localStorage?.getItem('value'))
+          if (this.selected) {
+            this.$refs.customSelect.selectOption(this.selected, false)
+          }
+        }
+      }
+    }
+  },
   methods: {
     ...mapActions(['openModal']),
     getProjectsData() {

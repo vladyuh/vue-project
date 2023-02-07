@@ -19,6 +19,7 @@
       :disabled="disabled"
       :to="to"
       :href="href"
+      :target="href ? '_blank' : undefined"
       v-bind="$attrs"
       @click="clickHandler($event)"
   >
