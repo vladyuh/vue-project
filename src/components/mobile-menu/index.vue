@@ -54,8 +54,8 @@
               name="dark-mode"
               id="dark-mode"
               class="mobile-menu__dark-mode"
-              @input="changeDarkMode"
-              :value="isDarkMode"
+              @input="toggleTheme"
+              :value="isDarkModeOn"
           >
             <span>Тёмная тема</span>
           </switcher>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import icon from "@/common-components/icon";
 import Switcher from "@/common-components/switcher";
 
@@ -83,32 +83,26 @@ export default {
       default: () => []
     }
   },
-  data() {
-    return {
-      isDarkMode: null
-    }
-  },
   beforeDestroy() {
     this.closeMenu()
   },
   created () {
-    let darkmode = JSON.parse(localStorage?.getItem('darkmode'))
-
-    if(!darkmode) {
-      localStorage.setItem('darkmode', false)
-      darkmode = false
-    }
-
-    this.isDarkMode = darkmode
+  },
+  computed: {
+    ...mapGetters(['isDarkModeOn'])
   },
   methods: {
-    ...mapActions(['closeMenu']),
+    ...mapActions(['closeMenu', 'setDarkModeOn', 'setDarkModeOff']),
     closeMobileMenu () {
       this.$bus.emit('close-mobile-menu')
     },
-    changeDarkMode () {
-      this.isDarkMode = !this.isDarkMode
-      this.$bus.emit('darkmode-change', this.isDarkMode)
+    toggleTheme () {
+      if(this.isDarkModeOn) {
+        this.setDarkModeOff()
+
+        return
+      }
+      this.setDarkModeOn()
     }
   }
 }

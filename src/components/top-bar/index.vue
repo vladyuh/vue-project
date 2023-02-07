@@ -31,8 +31,8 @@
           name="dark-mode"
           id="dark-mode"
           class="top-bar__dark-mode"
-          @input="changeDarkMode"
-          :value="isDarkMode"
+          @input="toggleTheme"
+          :value="isDarkModeOn"
       >
         <span>Тёмная тема</span>
       </switcher>
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import { throttle } from 'lodash'
 import burger from "@/common-components/burger";
 import Icon from "@/common-components/icon"
@@ -98,7 +98,6 @@ export default {
       previousCoordinates: -CONTENT_RECT_TOP,
       forceShowMenu: false,
       windowWidth: 0,
-      isDarkMode: null
     }
   },
   mounted () {
@@ -106,32 +105,29 @@ export default {
   },
   created () {
     this.$bus.on('set-force-show-topbar', this.setForceShowMenu)
-
-    let darkmode = JSON.parse(localStorage?.getItem('darkmode'))
-
-    if(!darkmode) {
-      localStorage.setItem('darkmode', false)
-      darkmode = false
-    }
-
-    this.isDarkMode = darkmode
   },
   beforeDestroy () {
     this.$bus.off('set-force-show-topbar', this.setForceShowMenu)
   },
   computed: {
-    ...mapGetters(['isDesktop'])
+    ...mapGetters(['isDesktop']),
+    ...mapGetters(['isDarkModeOn'])
   },
   methods: {
+    ...mapActions(['closeMenu', 'setDarkModeOn', 'setDarkModeOff']),
     burgerClick () {
       this.$bus.emit('open-mobile-menu')
     },
     setForceShowMenu (value) {
       this.forceShowMenu = !!value
     },
-    changeDarkMode () {
-      this.isDarkMode = !this.isDarkMode
-      this.$bus.emit('darkmode-change', this.isDarkMode)
+    toggleTheme () {
+      if(this.isDarkModeOn) {
+        this.setDarkModeOff()
+
+        return
+      }
+      this.setDarkModeOn()
     },
     onScroll: throttle(function () {
       if (this.forceShowMenu) {

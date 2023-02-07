@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import { debounce } from 'lodash'
 
 import TopBar from "@/components/top-bar";
@@ -99,16 +99,7 @@ export default {
   created() {
     this.setHistoryStartValues()
 
-    let darkmode = JSON.parse(localStorage?.getItem('darkmode'))
-
-    if(!darkmode) {
-      localStorage.setItem('darkmode', false)
-      darkmode = false
-    }
-
-    this.isDarkMode = darkmode
-
-    this.toggleDarkMode()
+    this.toggleTheme()
 
     window.addEventListener('resize', this.onResize, { passive: true })
     this.changeSizeFlag()
@@ -130,11 +121,6 @@ export default {
       this.closeMenu()
       this.$bus.emit('remove-position-fixed')
     })
-    this.$bus.on('darkmode-change', (value) => {
-      this.isDarkMode = value
-      localStorage.setItem('darkmode', value)
-      this.toggleDarkMode()
-    })
 
     this.startHistoryLength = 0
   },
@@ -142,7 +128,8 @@ export default {
     ...mapGetters(['mobileMenuLinks']),
     ...mapGetters(['isDesktop']),
     ...mapGetters(['isMenuOpened']),
-    ...mapGetters(['getOpenedModals'])
+    ...mapGetters(['getOpenedModals']),
+    ...mapGetters(['isDarkModeOn'])
   },
   methods: {
     ...mapActions(['changeSizeFlag']),
@@ -151,8 +138,8 @@ export default {
     closeMobileMenu() {
       this.$bus.emit('close-mobile-menu')
     },
-    toggleDarkMode () {
-      this.isDarkMode
+    toggleTheme () {
+      this.isDarkModeOn
           ? document.documentElement.classList.add('dark-mode')
           : document.documentElement.classList.remove('dark-mode')
     },
