@@ -26,11 +26,6 @@
       </div>
     </div>
   </section>
-  <preloader
-      v-else
-      full-page
-      remove-overflow
-  />
 </template>
 
 <script>
@@ -46,6 +41,7 @@ export default {
     SectionHeader,
     CustomSelect,
     ProjectListItem,
+    // eslint-disable-next-line vue/no-unused-components
     Preloader
   },
   data() {

@@ -21,45 +21,36 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all 0.25s ease;
-  border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 100%;
   padding: $defaultPadding;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: 600;
-  color: $color-text-primary;
-  background-color: $color-input-bg;
+  color: $md-sys-color-on-surface-light;
+  background-color: $md-sys-color-background-light;
+  border: 2px solid $md-sys-color-outline-light;
 
   .dark-mode & {
-    color: $color-text-primary-dm;
-    background-color: $color-input-bg-dm;
+    border: 2px solid $md-sys-color-outline-dark;
+    color: $md-sys-color-on-surface-dark;
+    background-color: $md-sys-color-background-dark;
   }
-
+  
   &:focus,
   &:active {
-    color: $color-text-primary;
-    border-color: $color-accent-primary;
-
+    border-color: $md-sys-color-primary-light;
+    
     .dark-mode & {
-      color: $white;
-      border-color: $color-accent-primary-dm;
-    }
-  }
-
-  &:valid {
-    color: $color-text-primary;
-
-    .dark-mode & {
-      color: $color-text-primary-dm;
+      border-color: $md-sys-color-primary-dark;
     }
   }
 
   &::placeholder {
-    color: $color-text-primary;
-
+    color: $md-sys-color-on-surface-variant-light;
+    
     .dark-mode & {
-      color: $color-text-primary-dm;
+      color: $md-sys-color-on-surface-variant-dark;
     }
   }
 }

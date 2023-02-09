@@ -9,47 +9,42 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: $color-text-primary;
   position: relative;
   width: 100%;
-
-  .dark-mode & {
-    color: $color-text-primary-dm;
-  }
 
   &__selected {
     position: relative;
     transition: all 0.25s ease;
-    border: 2px solid transparent;
+    border: 2px solid $md-sys-color-outline-light;
     width: 100%;
     outline: none;
     padding: $defaultPadding 40px $defaultPadding $defaultPadding;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: 600;
-    color: $color-text-primary;
-    background-color: $color-input-bg;
+    color: $md-sys-color-on-surface-light;
+    background-color: $md-sys-color-background-light;
     height: $inputHeightWithBorder;
-    border-radius: 8px;
-
-    .dark-mode & {
-      color: $color-text-primary-dm;
-      background-color: $color-input-bg-dm;
-    }
+    border-radius: 4px;
 
     .custom-select--opened & {
-      border-color: $color-accent-primary;
+      border-color: $md-sys-color-primary-light;
 
       .dark-mode & {
-        border-color: $color-accent-primary-dm;
+        border-color: $md-sys-color-primary-dark;
       }
     }
 
-    .custom-select--with-value & {
-      color: $color-text-primary;
+    .dark-mode & {
+      color: $md-sys-color-on-surface-dark;
+      background-color: $md-sys-color-background-dark;
+    }
+
+    .custom-select:not(.custom-select--with-value) & {
+      color: $md-sys-color-on-surface-variant-light;
 
       .dark-mode & {
-        color: $color-text-primary-dm;
+        color: $md-sys-color-on-surface-variant-dark;
       }
     }
 
@@ -65,10 +60,10 @@
         align-items: center;
         width: $iconDimensions;
         height: $iconDimensions;
-        color: $color-text-primary;
+        color: $md-sys-color-on-surface-light;
 
         .dark-mode & {
-          color: $color-text-primary-dm;
+          color: $md-sys-color-on-surface-dark;
         }
       }
     }
@@ -84,17 +79,17 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background: $color-input-bg;
-    color: $color-text-primary;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 4px;
     overscroll-behavior: contain;
     box-shadow: $box-elevation;
+    color: $md-sys-color-on-surface-light;
+    background-color: $md-sys-color-surface-variant-light;
 
     .dark-mode & {
-      background: $color-input-bg-dm;
-      color: $color-text-primary-dm;
       box-shadow: $box-elevation-dm;
+      color: $md-sys-color-on-surface-dark;
+      background-color: $md-sys-color-surface-variant-dark;
     }
 
     &.open {
@@ -109,14 +104,14 @@
     padding: 0;
     text-align: left;
     border: none;
-    color: $color-text-primary;
     cursor: pointer;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overscroll-behavior: contain;
+    color: $md-sys-color-on-surface-light;
 
     .dark-mode & {
-      color: $color-text-primary-dm;
+      color: $md-sys-color-on-surface-dark;
     }
 
     &::-webkit-scrollbar {
@@ -141,13 +136,11 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: $color-text-primary;
     text-align: left;
-    border-bottom: 2px solid $color-text-primary;
+    border-bottom: 2px solid $md-sys-color-outline-light;
 
     .dark-mode & {
-      color: $color-text-primary-dm;
-      border-color: $color-text-primary-dm;
+      border-bottom: 2px solid $md-sys-color-outline-dark;
     }
 
     &:last-child {
@@ -157,11 +150,6 @@
     &:hover,
     &.active {
       background: rgba(0, 0, 0, 0.05);
-      color: $color-text-primary;
-
-      .dark-mode & {
-        color: $color-text-primary-dm;
-      }
     }
 
     &-label {
@@ -181,12 +169,12 @@
     bottom: 0;
     right: 0;
     transition: all 0.25s ease;
-    color: $color-text-primary;
     width: 40px;
     padding: 8px;
+    color: $md-sys-color-on-surface-light;
 
     .dark-mode & {
-      color: $color-text-primary-dm;
+      color: $md-sys-color-on-surface-dark;
     }
 
     &-up {

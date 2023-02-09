@@ -3,17 +3,11 @@
       :is="componentName"
       class="btn"
       :class="{
-       'btn--middle': middle,
-       'btn--small': small,
-       'btn--gradient': gradient,
-       'btn--dashed': dashed,
-       'btn--bordered': bordered,
-       'btn--spinner-icon': spinner,
-       'btn--no-rounded': noRounded,
-    }"
-      :style="{
-      color: fontColor,
-      backgroundColor: bgColor
+        'btn--elevated': elevated,
+        'btn--tonal': tonal,
+        'btn--outline': outline,
+        'btn--no-bg': notbg,
+        'btn--spinner-icon': spinner,
     }"
       :type="type"
       :disabled="disabled"
@@ -54,36 +48,12 @@ export default {
     Spinner
   },
   props: {
+    elevated: Boolean,
+    tonal: Boolean,
+    outline: Boolean,
+    notbg: Boolean,
     spinner: Boolean,
-    threeColor: Boolean,
-    gradient: Boolean,
-    noRounded: Boolean,
-    lg: Boolean,
-    middle: Boolean,
-    small: Boolean,
-    styleNormal: Boolean,
-    notUppercase: Boolean,
-    bgColor: String,
-    fontColor: String,
-    info: Boolean,
-    warning: Boolean,
-    gray: Boolean,
-    dark: Boolean,
-    bordered: Boolean,
-    radius: Boolean,
-    notbg: {
-      type: Boolean,
-      default: false
-    },
     disabled: {
-      type: Boolean,
-      default: false
-    },
-    rectangle: {
-      type: Boolean,
-      default: false
-    },
-    dashed: {
       type: Boolean,
       default: false
     },

@@ -27,9 +27,9 @@
 .vb-dragger-styler {
   height: 100%;
   border-radius: 3px;
-  background-color: $color-accent-primary;
+  background-color: $md-sys-color-primary-light;
 
   .dark-mode & {
-    background-color: $color-accent-primary-dm;
+    background-color: $md-sys-color-primary-dark;
   }
 }

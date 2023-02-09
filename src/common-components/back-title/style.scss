@@ -6,15 +6,34 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
   cursor: pointer;
+  background: $md-sys-color-surface-variant-light;
+  color: $md-sys-color-primary-light;
+  border-radius: 50%;
+  transition: background-color, color 0.25s ease;
+
+  &:hover {
+    color: $md-sys-color-on-primary-light;
+    background: $md-sys-color-primary-light;
+  }
+
+  .dark-mode & {
+    background: $md-sys-color-surface-variant-dark;
+    color: $md-sys-color-primary-dark;
+
+    &:hover {
+      color: $md-sys-color-on-primary-dark;
+      background: $md-sys-color-primary-dark;
+    }
+  }
 }
 
 .back-title__button-icon {
-  width: 12px;
-  height: auto;
+  width: 24px;
+  height: 24px;
 }
 
 .back-title__wrap {
@@ -33,7 +52,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 28px 0 28px 0;
+  padding: 32px 0;
   z-index: 2;
   transition: top, padding 0.25s ease;
 
@@ -44,12 +63,12 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: $color-item-secondary;
+    background: $md-sys-color-surface-1-light;
     z-index: -1;
     opacity: 0;
 
     .dark-mode & {
-      background: $color-item-secondary-dm;
+      background: $md-sys-color-surface-1-dark;
     }
   }
 
@@ -69,14 +88,14 @@
     }
 
     .back-title__button {
-      //background: $white;
-    }
-
-    .back-title__button-text {
-      color: $color-text-primary;
+      width: 24px;
+      height: 24px;
+      background: none;
+      color: $md-sys-color-on-surface-light;
+      margin-right: 8px;
 
       .dark-mode & {
-        color: $color-text-primary-dm;
+        color: $md-sys-color-on-surface-dark;
       }
     }
 
@@ -87,19 +106,14 @@
 }
 
 .back-title__button-text {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  color: $color-text-primary;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.4;
   transform: translateZ(0);
 
-  .dark-mode & {
-    color: $color-text-primary-dm;
-  }
-
   .fixed & {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 

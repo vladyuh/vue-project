@@ -1,6 +1,5 @@
 <template>
   <section
-      v-if="isProjectLoaded"
       class="project-page-detail"
   >
     <div class="container">
@@ -31,11 +30,6 @@
       </div>
     </div>
   </section>
-  <preloader
-      v-else
-      full-page
-      remove-overflow
-  />
 </template>
 
 <script>
@@ -49,6 +43,7 @@ export default {
   components: {
     sectionHeader,
     Btn,
+    // eslint-disable-next-line vue/no-unused-components
     Preloader
   },
   props: {

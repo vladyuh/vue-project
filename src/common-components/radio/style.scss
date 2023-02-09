@@ -33,15 +33,15 @@
         height: 20px;
         width: 20px;
         min-width: 20px;
-        background-color: $color-bg-primary;
-        border: 2px solid $color-accent-primary;
+        background-color: $md-sys-color-background-light;
+        border: 2px solid $md-sys-color-primary-light;
         display: inline-block;
         margin-right: 10px;
         border-radius: 50%;
 
         .dark-mode & {
-            background-color: $color-bg-primary-dm;
-            border: 2px solid $color-accent-primary-dm;
+            background-color: $md-sys-color-background-dark;
+            border: 2px solid $md-sys-color-primary-dark;
         }
 
         &:after {
@@ -51,14 +51,14 @@
             top: 50%;
             width: 12px;
             height: 12px;
-            border: solid $color-text-primary-dm;
+            border: solid $md-sys-color-primary-light;
             transition: 0.25s cubic-bezier(.08, .82, .17, 1);
             transform: translate(-50%, -50%);
             opacity: 0;
             border-radius: 50%;
 
             .dark-mode & {
-                border-color: $color-text-primary;
+                border-color: $md-sys-color-primary-dark;
             }
         }
     }
@@ -75,11 +75,11 @@
 
         &:checked~.radio__elem:after {
             opacity: 1;
-            background: $color-accent-primary;
+            background: $md-sys-color-primary-light;
             border: none;
 
             .dark-mode & {
-                background: $color-accent-primary-dm;
+                background: $md-sys-color-primary-dark;
             }
         }
     }

@@ -7,20 +7,21 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 52px;
-  padding: 0 32px;
+  height: 40px;
+  padding: 0 24px;
   border: none;
-  background-color: $color-accent-primary;
-  border-radius: 40px;
+  background: $md-sys-color-primary-light;
+  border-radius: 20px;
   outline: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 
   .dark-mode & {
-    background-color: $color-accent-primary-dm;
+    background-color: $md-sys-color-primary-dark;
   }
 
   &:hover {
+    opacity: 0.92;
     box-shadow: $box-elevation;
 
     .dark-mode & {
@@ -28,42 +29,152 @@
     }
   }
 
-  &.btn--dashed {
-    background-color: transparent;
-    box-shadow: none !important;
-
-    &:hover {
-      opacity: 0.7;
-      background-color: transparent;
-    }
-  }
-
-  &.btn--no-rounded {
-    border-radius: 8px;
-  }
-
   &.disabled,
   &[disabled] {
-    opacity: 0.5;
+    opacity: 0.38;
     pointer-events: none;
     box-shadow: none !important;
   }
-}
 
-.btn__icon-block {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-50%, 0);
-  z-index: 3;
-}
+  &.btn--elevated {
+    background-color: transparentize($md-sys-color-surface-tint-light, 0.95);
+    box-shadow: $box-elevation;
 
-.btn--middle {
-  height: 32px;
-}
+    .btn__text {
+      color: $md-sys-color-primary-light;
+    }
 
-.btn--small {
-  height: 24px;
+    .btn__icon {
+      color: $md-sys-color-primary-light;
+    }
+
+    .preloader__spinner--btn {
+      border-color: $md-sys-color-primary-light;
+
+      .dark-mode {
+        border-color: $md-sys-color-primary-dark;
+      }
+    }
+
+    .dark-mode & {
+      background-color: transparentize($md-sys-color-surface-tint-dark, 0.95);
+      box-shadow: $box-elevation-dm;
+
+      .btn__text {
+        color: $md-sys-color-primary-dark;
+      }
+
+      .btn__icon {
+        color: $md-sys-color-primary-dark;
+      }
+    }
+  }
+
+  &.btn--tonal {
+    background-color: $md-sys-color-secondary-container-light;
+
+    .btn__text {
+      color: $md-sys-color-on-secondary-container-light;
+    }
+
+    .btn__icon {
+      color: $md-sys-color-on-secondary-container-light;
+    }
+
+    .preloader__spinner--btn {
+      border-color: $md-sys-color-on-secondary-container-light;
+
+      .dark-mode {
+        border-color: $md-sys-color-on-secondary-container-dark;
+      }
+    }
+
+    .dark-mode & {
+      background-color: $md-sys-color-secondary-container-dark;
+
+      .btn__text {
+        color: $md-sys-color-on-secondary-container-dark;
+      }
+
+      .btn__icon {
+        color: $md-sys-color-on-secondary-container-dark;
+      }
+
+      .preloader__spinner--btn {
+        border-color: $md-sys-color-on-secondary-container-light;
+
+        .dark-mode {
+          border-color: $md-sys-color-on-secondary-container-dark;
+        }
+      }
+    }
+  }
+
+  &.btn--outline {
+    background-color: $md-sys-color-surface-light;
+    border: 1px solid $md-sys-color-outline-light;
+
+    .btn__text {
+      color: $md-sys-color-primary-light;
+    }
+
+    .btn__icon {
+      color: $md-sys-color-primary-light;
+    }
+
+    .preloader__spinner--btn {
+      border-color: $md-sys-color-primary-light;
+
+      .dark-mode {
+        border-color: $md-sys-color-primary-dark;
+      }
+    }
+
+    .dark-mode & {
+      background-color: $md-sys-color-surface-dark;
+      border: 1px solid $md-sys-color-outline-dark;
+
+      .btn__text {
+        color: $md-sys-color-primary-dark;
+      }
+
+      .btn__icon {
+        color: $md-sys-color-primary-dark;
+      }
+    }
+  }
+
+  &.btn--no-bg {
+    background-color: transparent;
+
+    .btn__text {
+      color: $md-sys-color-primary-light;
+    }
+
+    .btn__icon {
+      color: $md-sys-color-primary-light;
+    }
+
+    .preloader__spinner--btn {
+      border-color: $md-sys-color-primary-light;
+
+      .dark-mode {
+        border-color: $md-sys-color-primary-dark;
+      }
+    }
+
+    .dark-mode & {
+      background-color: transparent;
+
+      .btn__text {
+        color: $md-sys-color-primary-dark;
+      }
+
+      .btn__icon {
+        color: $md-sys-color-primary-dark;
+      }
+    }
+  }
 }
 
 .btn__text {
@@ -73,47 +184,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 4px;
   font-weight: 600;
   font-size: 16px;
-  line-height: 1.5;
-  color: $white;
+  line-height: 1;
+  color: $md-sys-color-on-primary-light;
   letter-spacing: normal;
   text-align: center;
-  text-transform: uppercase;
   z-index: 3;
 
   .dark-mode & {
-    color: $color-text-primary;
-  }
-
-  .btn--dashed & {
-    color: $color-accent-primary;
-
-    .dark-mode & {
-      color: $color-accent-primary-dm;
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 100%;
-      border-bottom: 2px dashed $color-accent-primary;
-
-      .dark-mode & {
-        border-color: $color-accent-primary-dm;
-      }
-    }
-  }
-
-  .btn--bordered & {
-    color: $color-accent-primary;
-
-    .dark-mode & {
-      color: $color-accent-primary-dm;
-    }
+    color: $md-sys-color-on-primary-dark;
   }
 }
 
@@ -122,25 +202,24 @@
   opacity: 0;
 }
 
-.btn--bordered {
-  background-color: transparent;
-  border: 2px solid $color-accent-primary;
+.btn__icon {
+  position: relative;
+  margin-left: -8px;
+  margin-right: 8px;
+  z-index: 3;
+  width: 18px;
+  height: 18px;
+  color: $md-sys-color-on-primary-light;
 
   .dark-mode & {
-    border-color: $color-accent-primary-dm;
-    background-color: transparent;
+    color: $md-sys-color-on-primary-dark;
   }
 }
 
-.btn__icon {
-  position: relative;
-  margin-right: 10px;
+.btn__icon-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%, 0);
   z-index: 3;
-  width: 20px;
-  height: 20px;
-  color: $white;
-
-  .dark-mode & {
-    color: $color-text-primary;
-  }
 }

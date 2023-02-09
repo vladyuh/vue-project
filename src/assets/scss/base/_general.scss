@@ -8,15 +8,15 @@ html {
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
-  background: $color-bg-primary;
-  color: $color-text-primary;
+  background: $md-sys-color-background-light;
+  color: $md-sys-color-on-surface-light;
   letter-spacing: normal;
   font-family: 'Mulish', sans-serif;
   scroll-behavior: smooth;
 
   &.dark-mode {
-    background: $color-bg-primary-dm;
-    color: $color-text-primary-dm;
+    background: $md-sys-color-background-dark;
+    color: $md-sys-color-on-surface-dark;
   }
 }
 
@@ -46,11 +46,11 @@ ul {
 }
 
 a {
-  color: $color-text-primary;
   text-decoration: none;
+  color: $md-sys-color-on-surface-light;
 
   .dark-mode & {
-    color: $color-text-primary-dm;
+    color: $md-sys-color-on-surface-dark;
   }
 }
 

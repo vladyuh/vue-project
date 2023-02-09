@@ -44,27 +44,27 @@
 
 .switcher__pseudo-block {
   position: relative;
-  width: 42px;
-  height: 24px;
+  width: 52px;
+  height: 32px;
   display: inline-block;
   border-radius: 20px;
-  background-color: $color-accent-secondary;
   pointer-events: none;
-  border: 2px solid $color-accent-primary;
+  background-color: $md-sys-color-surface-variant-light;
+  border: 2px solid $md-sys-color-outline-light;
   transition: all 0.25s ease;
 
   .dark-mode & {
-    background-color: $color-accent-secondary-dm;
-    border: 2px solid $color-accent-primary-dm;
+    background-color: $md-sys-color-surface-variant-dark;
+    border: 2px solid $md-sys-color-outline-dark;
   }
 
   .switcher__ch:checked ~ & {
-    background-color: $color-accent-primary;
-    border: 2px solid $color-accent-primary;
+    background-color:$md-sys-color-primary-light;
+    border: 2px solid $md-sys-color-primary-light;
 
     .dark-mode & {
-      background-color: $color-accent-primary-dm;
-      border: 2px solid $color-accent-primary-dm;
+      background-color: $md-sys-color-primary-dark;
+      border: 2px solid $md-sys-color-primary-dark;
     }
 
     .switcher.disabled & {
@@ -77,28 +77,31 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: 2px;
+    left: 6px;
     z-index: 10;
     transform: translate3d(0, -50%, 0);
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background-color: $color-text-primary;
-    transition: all 0.25s ease;
+    transition: background-color, transform 0.25s ease;
     opacity: 0.9;
+    background-color: $md-sys-color-outline-light;
 
     .dark-mode & {
-      background-color: $color-text-primary-dm;
+      background-color: $md-sys-color-outline-dark;
     }
 
     .switcher__ch:checked ~ & {
+      margin: 0;
       left: auto;
       right: 2px;
-      background: $color-text-primary-dm;
       opacity: 1;
+      width: 24px;
+      height: 24px;
+      background-color: $md-sys-color-on-primary-light;
 
       .dark-mode & {
-        background: $color-text-primary;
+        background-color: $md-sys-color-on-primary-dark;
       }
     }
   }

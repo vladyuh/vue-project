@@ -2,6 +2,9 @@
   <div class="styles styles-container">
     <section>
       <div class="container">
+        <back-title
+            text="Назад"
+        />
         <section-header
             :level="1"
             text="Заголовок H1"
@@ -59,24 +62,11 @@
       <div class="container">
         <h2>Кнопки</h2>
         <div class="buttons" style="display: flex; flex-wrap: wrap; gap: 16px;">
-          <btn>
-            <span>Primary</span>
-          </btn>
-          <btn
-              spinner
-          >
-            <span>Spinner</span>
-          </btn>
-          <btn
-              bordered
-          >
-            <span>Secondary</span>
-          </btn>
-          <btn
-              dashed
-          >
-            <span>Dashed</span>
-          </btn>
+          <btn elevated><span>Elevated</span></btn>
+          <btn><span>Normal</span></btn>
+          <btn tonal><span>Tonal</span></btn>
+          <btn outline><span>Outline</span></btn>
+          <btn notbg><span>Text</span></btn>
         </div>
       </div>
     </section>
@@ -277,6 +267,7 @@ import BottomSheet from "@/common-components/bottom-sheet";
 import Switcher from "@/common-components/switcher";
 import sectionHeader from "@/common-components/section-header";
 import Icon from "@/common-components/icon";
+import backTitle from "@/common-components/back-title";
 
 export default {
   name: 'StylesView',
@@ -291,7 +282,8 @@ export default {
     Btn,
     InputField,
     radio,
-    sectionHeader
+    sectionHeader,
+    backTitle
   },
   data() {
     return {

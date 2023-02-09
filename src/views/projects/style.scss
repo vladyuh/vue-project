@@ -44,21 +44,21 @@
 
 .projects-list__item-wr {
   padding: 24px;
-  background: $color-item-secondary;
+  background: $md-sys-color-surface-1-light;
   border-radius: 24px;
   z-index: 1;
   transition: all 0.25s ease;
 
   .dark-mode & {
-    background: $color-item-secondary-dm;
+    background: $md-sys-color-surface-1-dark;
   }
 
   &:hover {
-    background: darken($color-item-secondary, 5%);
+    background: $md-sys-color-secondary-container-light;
     border-radius: 32px;
 
     .dark-mode & {
-      background: lighten($color-item-secondary-dm, 5%);
+      background: $md-sys-color-secondary-container-dark
     }
   }
 }

@@ -33,14 +33,14 @@
         height: 20px;
         width: 20px;
         min-width: 20px;
-        background-color: $color-bg-primary;
-        border: 2px solid $color-accent-primary;
+        background-color: $md-sys-color-background-light;
+        border: 2px solid $md-sys-color-primary-light;
         display: inline-block;
         margin-right: 10px;
 
         .dark-mode & {
-            background-color: $color-bg-primary-dm;
-            border: 2px solid $color-accent-primary-dm;
+            background-color: $md-sys-color-background-dark;
+            border: 2px solid $md-sys-color-primary-dark;
         }
 
         &::after {
@@ -53,13 +53,14 @@
             transition: 0.25s cubic-bezier(0.08, 0.82, 0.17, 1);
             opacity: 0;
             background-size: 13px;
-            border-left: 2px solid $color-text-primary-dm;
-            border-bottom: 2px solid $color-text-primary-dm;
+            border-left: 2px solid $md-sys-color-on-primary-light;
+            border-bottom: 2px solid $md-sys-color-on-primary-light;
             transform: rotate(0);
             background: transparent no-repeat center;
 
             .dark-mode & {
-                border-color: $color-text-primary;
+                border-left: 2px solid $md-sys-color-on-primary-dark;
+                border-bottom: 2px solid $md-sys-color-on-primary-dark;
             }
         }
     }
@@ -75,13 +76,11 @@
         }
 
         &:checked~.checkbox__elem {
-            background-color: $color-accent-primary;
-            border-color: $color-accent-primary;
+            background-color: $md-sys-color-primary-light;
             z-index: 1;
 
             .dark-mode & {
-                background-color: $color-accent-primary-dm;
-                border-color: $color-accent-primary-dm;
+                background-color: $md-sys-color-primary-dark;
             }
         }
 

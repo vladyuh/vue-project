@@ -7,12 +7,12 @@
   left: 0;
   bottom: 0;
   width: 300px;
-  background: $color-bg-primary;
+  background: $md-sys-color-surface-light;
   transition: transform 0.3s ease;
   z-index: 100;
 
   .dark-mode & {
-    background: $color-bg-primary-dm;
+    background: $md-sys-color-surface-dark;
   }
 
   &__overlay{
@@ -59,20 +59,20 @@
       margin: 0 -16px;
       min-height: 48px;
       font-weight: 600;
-      color: $color-text-primary;
+      color: $md-sys-color-on-surface-variant-light;
 
       .dark-mode & {
-        color: $color-text-primary-dm;
+        color: $md-sys-color-on-surface-variant-dark;
       }
 
       &.router-link-exact-active {
         border-radius: 100px;
-        background: $color-item-secondary;
-        color: $color-text-primary;
+        background: $md-sys-color-secondary-container-light;
+        color: $md-sys-color-on-secondary-container-light;
 
         .dark-mode & {
-          background: $color-item-secondary-dm;
-          color: $color-text-primary-dm;
+          background: $md-sys-color-secondary-container-dark;
+          color: $md-sys-color-on-secondary-container-dark;
         }
       }
 
