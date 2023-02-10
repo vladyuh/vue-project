@@ -11,6 +11,22 @@
   transition: transform 0.3s ease;
   z-index: 100;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize($md-sys-color-surface-tint-light, 0.95);
+    z-index: 0;
+    transition: all 0.25s ease;
+
+    .dark-mode & {
+      background-color: transparentize($md-sys-color-surface-tint-dark, 0.95);
+    }
+  }
+
   .dark-mode & {
     background: $md-sys-color-surface-dark;
   }
@@ -33,9 +49,11 @@
   }
 
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    z-index: 1;
   }
 
   &__top {
