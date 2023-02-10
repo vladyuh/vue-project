@@ -2,12 +2,6 @@
   <div
     :class="{'input': isInput, 'textarea': !isInput }"
   >
-    <label
-        v-if="label"
-        v-html="label"
-        :for="id"
-    >
-    </label>
     <div
         :class="[
         {
@@ -22,6 +16,7 @@
           :icon-name="iconName"
       >
       </icon>
+
       <input
           v-if="isInput"
           v-model="inputValue"
@@ -53,6 +48,15 @@
       >
 
       </textarea>
+
+      <div
+          v-html="label"
+          :class="[
+        {
+          'input-wr__label': isInput,
+          'textarea-wr__label': !isInput,
+        }]"
+      />
     </div>
   </div>
 </template>
@@ -97,7 +101,7 @@ export default {
     },
     label: {
       type: String,
-      default: ''
+      required: true
     },
     disabled: {
       type: Boolean,

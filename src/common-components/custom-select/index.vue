@@ -9,22 +9,19 @@
     ]"
   >
     <div
-        v-if="label"
-        class="custom-select__label"
-    >
-      {{ label }}
-    </div>
-    <div
         :class="[
         'custom-select__selected',
         {
           'custom-select__selected--with-icon': iconName,
-          'custom-select__selected--label': label
         }
       ]"
         :disabled="isDisabled"
         @click.stop="toggleSelect"
     >
+
+      <div class="custom-select__label">
+        {{ label }}
+      </div>
 
       <icon
           v-if="iconName"
@@ -39,7 +36,7 @@
       />
 
       <icon
-          icon-name="ic_expand"
+          icon-name="ic_dropdown"
           :class="[
           'custom-select__arrow',
           `${showOptions ? 'custom-select__arrow-up' : 'custom-select__arrow-down'}`,
@@ -100,7 +97,10 @@ export default {
     maxHeight: Number,
     placeholder: String,
     isDisabled: String,
-    label: String,
+    label: {
+      type: String,
+      required: true
+    },
     iconName: null
   },
   data () {

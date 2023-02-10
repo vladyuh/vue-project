@@ -3,8 +3,6 @@
 .custom-select {
   cursor: pointer;
   display: inline-block;
-  font-size: $font-size;
-  line-height: $line-height;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -12,23 +10,53 @@
   position: relative;
   width: 100%;
 
+  &__label {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: $md-sys-color-on-surface-light;
+    transition: all 0.25s ease;
+
+    .dark-mode & {
+      color: $md-sys-color-on-surface-dark;
+    }
+
+    .custom-select--opened & {
+      color: $md-sys-color-primary-light;
+
+      .dark-mode & {
+        color: $md-sys-color-primary-dark;
+      }
+    }
+
+    .custom-select__selected--with-icon & {
+      left: 48px;
+    }
+  }
+
   &__selected {
     position: relative;
     transition: all 0.25s ease;
-    border: 2px solid $md-sys-color-outline-light;
+    border-radius: 4px 4px 0 0;
     width: 100%;
-    outline: none;
-    padding: $defaultPadding 40px $defaultPadding $defaultPadding;
+    padding: 24px 40px 8px 16px;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: 600;
     color: $md-sys-color-on-surface-light;
-    background-color: $md-sys-color-background-light;
-    height: $inputHeightWithBorder;
-    border-radius: 4px;
+    background-color: $md-sys-color-surface-variant-light;
+    border-bottom: 1px solid $md-sys-color-outline-light;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    height: $inputHeight;
 
     .custom-select--opened & {
       border-color: $md-sys-color-primary-light;
+      border-width: 2px;
 
       .dark-mode & {
         border-color: $md-sys-color-primary-dark;
@@ -37,7 +65,7 @@
 
     .dark-mode & {
       color: $md-sys-color-on-surface-dark;
-      background-color: $md-sys-color-background-dark;
+      background-color: $md-sys-color-surface-variant-dark;
     }
 
     .custom-select:not(.custom-select--with-value) & {
@@ -50,11 +78,11 @@
 
     &--with-icon{
       position: relative;
-      padding: $defaultPadding 40px;
+      padding: 24px 40px 8px 48px;
 
       .icon:not(.custom-select__arrow) {
         position: absolute;
-        top: 14px;
+        top: 16px;
         left: 12px;
         display: flex;
         align-items: center;
@@ -72,7 +100,7 @@
   &__options-wrap {
     display: none;
     position: absolute !important;
-    top: $inputHeightWithBorder + 6px;
+    top: $inputHeightWithBorder;
     right: auto;
     left: 0;
     z-index: 1;
@@ -80,15 +108,13 @@
     padding: 0;
     list-style: none;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
     overscroll-behavior: contain;
     box-shadow: $box-elevation;
-    color: $md-sys-color-on-surface-light;
     background-color: $md-sys-color-surface-variant-light;
 
     .dark-mode & {
       box-shadow: $box-elevation-dm;
-      color: $md-sys-color-on-surface-dark;
       background-color: $md-sys-color-surface-variant-dark;
     }
 
@@ -99,7 +125,7 @@
 
   &__options{
     width: 100%;
-    max-height: ($inputHeightWithBorder * 3) - 2px;
+    max-height: 40px * 4;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -108,11 +134,6 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     overscroll-behavior: contain;
-    color: $md-sys-color-on-surface-light;
-
-    .dark-mode & {
-      color: $md-sys-color-on-surface-dark;
-    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -124,23 +145,23 @@
 
   &__option {
     margin: 0;
-    padding: $defaultPadding;
+    padding: 8px 16px;
     -webkit-transition: .15s ease-in;
     -o-transition: .15s ease-in;
     transition: .15s ease-in;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: 600;
-    height: $inputHeightWithBorder;
+    height: 40px;
     white-space: nowrap;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
     text-align: left;
-    border-bottom: 2px solid $md-sys-color-outline-light;
+    border-bottom: 1px solid $md-sys-color-outline-light;
 
     .dark-mode & {
-      border-bottom: 2px solid $md-sys-color-outline-dark;
+      border-bottom: 1px solid $md-sys-color-outline-dark;
     }
 
     &:last-child {
@@ -149,7 +170,7 @@
 
     &:hover,
     &.active {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(0, 0, 0, 0.1);
     }
 
     &-label {

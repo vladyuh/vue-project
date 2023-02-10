@@ -135,10 +135,12 @@
         <h2>Выпадающий список</h2>
         <div class="selects" style="display: flex; flex-direction: column; gap: 12px">
           <custom-select
+              label="Dropdown"
               placeholder="Select option"
               :options="options"
           />
           <custom-select
+              label="Dropdown"
               placeholder="Select option"
               icon-name="ic_apps"
               :options="options"
@@ -154,23 +156,27 @@
               type="text"
               name="user"
               placeholder="Your name"
+              label="Name"
           />
           <input-field
               icon-name="ic_apps"
               type="tel"
               name="phone"
               placeholder="Your phone"
+              label="Phone"
           />
           <input-field
               :is-input="false"
               name="message"
               placeholder="Your message"
+              label="Message"
           />
           <input-field
               :is-input="false"
               icon-name="ic_apps"
               name="message"
               placeholder="Additional info"
+              label="Info"
           />
         </div>
       </div>
@@ -222,29 +228,33 @@
         <bottom-sheet
             ref="bottomSheet"
         >
-          <h2>Текстовые поля</h2>
+          <h4>Текстовые поля</h4>
           <div class="inputs" style="display: flex; flex-direction: column; gap: 12px">
             <input-field
                 type="text"
                 name="user"
                 placeholder="Your name"
+                label="Name"
             />
             <input-field
                 icon-name="ic_apps"
                 type="tel"
                 name="phone"
                 placeholder="Your phone"
+                label="Phone"
             />
             <input-field
                 :is-input="false"
                 name="message"
                 placeholder="Your message"
+                label="Message"
             />
             <input-field
                 :is-input="false"
                 icon-name="ic_apps"
                 name="message"
                 placeholder="Additional info"
+                label="Info"
             />
           </div>
         </bottom-sheet>

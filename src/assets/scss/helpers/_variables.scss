@@ -10,11 +10,11 @@ $box-elevation-dm: 0px 2px 8px -1px rgba(0,0,0,0.2), 0px 4px 9px 0px rgba(0,0,0,
 /* inputs */
 $font-size: 16px;
 $line-height: 24px;
-$defaultPadding: 12px;
-$paddingWithIcon: 12px 12px 12px 40px;
-$inputHeight: 48px;
-$inputHeightWithBorder: 52px;
-$iconDimensions: 20px;
+$defaultPadding: 24px 16px 8px 16px;
+$paddingWithIcon: 24px 16px 8px 48px;
+$inputHeight: 56px;
+$inputHeightWithBorder: 56px;
+$iconDimensions: 24px;
 
 /* others */
 $breadCrumbDivider: " - ";

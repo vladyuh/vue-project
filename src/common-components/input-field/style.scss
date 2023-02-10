@@ -6,11 +6,11 @@ input[type="submit"] {
 }
 
 input:not([type=checkbox]):not([type=radio]) {
-  min-height: $inputHeight;
+  height: $inputHeight;
 }
 
 textarea {
-  min-height: 104px;
+  height: $inputHeight * 2;
 }
 
 input:not([type=checkbox]):not([type=radio]),
@@ -21,25 +21,29 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all 0.25s ease;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   width: 100%;
   padding: $defaultPadding;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: 600;
   color: $md-sys-color-on-surface-light;
-  background-color: $md-sys-color-background-light;
-  border: 2px solid $md-sys-color-outline-light;
+  background-color: $md-sys-color-surface-variant-light;
+  border-bottom: 1px solid $md-sys-color-outline-light;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 
   .dark-mode & {
-    border: 2px solid $md-sys-color-outline-dark;
+    border-bottom: 1px solid $md-sys-color-outline-dark;
     color: $md-sys-color-on-surface-dark;
-    background-color: $md-sys-color-background-dark;
+    background-color: $md-sys-color-surface-variant-dark;
   }
   
   &:focus,
   &:active {
     border-color: $md-sys-color-primary-light;
+    border-width: 2px;
     
     .dark-mode & {
       border-color: $md-sys-color-primary-dark;
@@ -104,5 +108,44 @@ textarea {
       width: 100%;
       padding: $paddingWithIcon !important;
     }
+  }
+}
+
+.input,
+.textarea {
+
+  &-wr {
+    position: relative;
+  }
+
+  &-wr__label {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: $md-sys-color-on-surface-light;
+    transition: all 0.25s ease;
+
+    .dark-mode & {
+      color: $md-sys-color-on-surface-dark;
+    }
+
+    input:focus ~ &,
+    input:active ~ &,
+    textarea:focus ~ &,
+    textarea:active ~ & {
+      color: $md-sys-color-primary-light;
+
+      .dark-mode & {
+        color: $md-sys-color-primary-dark;
+      }
+    }
+
+  }
+
+  &-wr--with-icon  &-wr__label {
+    left: 48px;
   }
 }

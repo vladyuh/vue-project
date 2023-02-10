@@ -63,12 +63,12 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: $md-sys-color-surface-1-light;
+    background: $md-sys-color-background-light;
     z-index: -1;
     opacity: 0;
 
     .dark-mode & {
-      background: $md-sys-color-surface-1-dark;
+      background: $md-sys-color-background-dark;
     }
   }
 
