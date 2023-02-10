@@ -8,15 +8,33 @@
     padding: 0 24px;
     margin-bottom: 24px;
   }
-}
 
-.projects-page__filter {
-  display: none;
-  justify-content: flex-end;
-  margin-bottom: 16px;
+  .back-title__inner {
 
-  .custom-select {
-    width: auto;
+    &.fixed {
+      .icon-btn,
+      .custom-select {
+        display: none;
+      }
+    }
+
+    .icon-btn {
+      margin-left: auto;
+    }
+
+    .custom-select {
+      @include md {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: calc(100% / 2 - 8px);
+      }
+
+      @include lg {
+        width: calc(100% / 3 - 8px);
+      }
+    }
   }
 }
 

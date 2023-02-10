@@ -3,12 +3,14 @@
       ref="customSelect"
       :class="[
       'custom-select',
-      {'custom-select--opened': showOptions},
+      {'custom-select--opened': showOptions || isInBottomSheet},
+      { 'custom-select--expanded': isInBottomSheet },
       {'pointer-event-none': isLocked},
       { 'custom-select--with-value': selectedValue }
     ]"
   >
     <div
+        v-if="!isInBottomSheet"
         :class="[
         'custom-select__selected',
         {
@@ -49,7 +51,7 @@
         @leave="leave"
     >
       <div
-          v-show="showOptions"
+          v-show="showOptions || isInBottomSheet"
           v-bar
           :class="['custom-select__options-wrap js-custom-select-menu', {
           'custom-select__options-wrap--top': selectMenuTop
@@ -101,7 +103,11 @@ export default {
       type: String,
       required: true
     },
-    iconName: null
+    iconName: null,
+    isInBottomSheet: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {

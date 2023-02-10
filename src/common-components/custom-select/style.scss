@@ -170,7 +170,7 @@
 
     &:hover,
     &.active {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.2);
     }
 
     &-label {
@@ -200,6 +200,21 @@
 
     &-up {
       transform: scaleY(-1);
+    }
+  }
+
+  &--expanded {
+    max-height: none;
+
+    .custom-select__options-wrap {
+      position: static !important;
+      display: block !important;
+      box-shadow: none;
+      border-radius: 4px;
+    }
+
+    .custom-select__options {
+      max-height: none;
     }
   }
 }

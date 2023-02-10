@@ -5,17 +5,25 @@
   >
     <div class="container">
       <back-title
+          ref="backTitle"
           text="Проекты"
-      />
-      <div class="projects-page__filter">
+      >
+        <icon-btn
+            v-if="isMobile || isTablet"
+            icon="ic_sort"
+            class="projects-page__filter-icon"
+            @click="$refs.bottomSheet.open()"
+        />
         <custom-select
-            v-show="false"
+            v-if="!isMobile && !isTablet"
+            class="projects-page__filter-select"
+            label="Сортировка"
             ref="customSelect"
-            placeholder="Сортировать по:"
+            placeholder="Выберите..."
             :options="options"
             @input="setSelected($event)"
         />
-      </div>
+      </back-title>
       <div class="projects-page__list">
         <project-list-item
             v-for="(project, index) in filteredProjects"
@@ -24,7 +32,27 @@
         />
       </div>
     </div>
+
+    <bottom-sheet
+        ref="bottomSheet"
+        v-if="isMobile || isTablet"
+    >
+      <section-header
+        :level="5"
+        text="Сортировка"
+      />
+      <custom-select
+          class="projects-page__filter-select"
+          label="Сортировка"
+          ref="customSelect"
+          placeholder="Выберите..."
+          :options="options"
+          :is-in-bottom-sheet="true"
+          @input="setSelected($event)"
+      />
+    </bottom-sheet>
   </section>
+
   <preloader
     v-else
     full-page
@@ -33,16 +61,20 @@
 </template>
 
 <script>
-import {mapActions} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import ProjectListItem from "@/views/projects/project-list-item";
 import CustomSelect from "@/common-components/custom-select";
 import SectionHeader from "@/common-components/section-header";
 import Preloader from "@/common-components/preloader";
 import BackTitle from "@/common-components/back-title";
+import IconBtn from "@/common-components/icon-btn";
+import BottomSheet from "@/common-components/bottom-sheet";
 
 export default {
   name: 'ProjectsView',
   components: {
+    BottomSheet,
+    IconBtn,
     // eslint-disable-next-line vue/no-unused-components
     SectionHeader,
     CustomSelect,
@@ -55,8 +87,10 @@ export default {
       projects: null,
       isLoaded: false,
       options: [
-        {name: "filter", value: "new", label: "Сначала новые"},
-        {name: "filter", value: "old", label: "Сначала старые"},
+        {name: "filter", value: "old", label: "Дата по возрастанию"},
+        {name: "filter", value: "new", label: "Дата по убыванию"},
+        {name: "filter", value: "title-down", label: "Алфавит по возрастанию"},
+        {name: "filter", value: "title-up", label: "Алфавит по убыванию"},
       ],
       selected: null
     }
@@ -66,6 +100,8 @@ export default {
   },
   mounted() {},
   computed: {
+    ...mapGetters(['isMobile']),
+    ...mapGetters(['isTablet']),
     filteredProjects () {
 
       const filtered = this.projects
@@ -76,6 +112,30 @@ export default {
 
       if(this.selected?.value === 'new') {
         filtered?.sort((a,b) => b.code - a.code)
+      }
+
+      if(this.selected?.value === 'title-down') {
+        filtered?.sort((a, b) => {
+          if (a.title.toLowerCase() < b.title.toLowerCase()) {
+            return -1;
+          }
+          if (a.title.toLowerCase() > b.title.toLowerCase()) {
+            return 1;
+          }
+          return 0;
+        })
+      }
+
+      if(this.selected?.value === 'title-up') {
+        filtered?.sort((a, b) => {
+          if (a.title.toLowerCase() > b.title.toLowerCase()) {
+            return -1;
+          }
+          if (a.title.toLowerCase() < b.title.toLowerCase()) {
+            return 1;
+          }
+          return 0;
+        })
       }
 
       return filtered
@@ -89,7 +149,7 @@ export default {
           await this.$nextTick()
           this.selected = JSON.parse(localStorage?.getItem('value'))
           if (this.selected) {
-            this.$refs.customSelect.selectOption(this.selected, false)
+            this.$refs.customSelect?.selectOption(this.selected, false)
           }
         }
       }
@@ -112,6 +172,10 @@ export default {
     setSelected (option) {
       localStorage.setItem('value', JSON.stringify(option))
       this.selected = JSON.parse(localStorage.getItem('value'))
+
+      if(this.$refs.bottomSheet) {
+        this.$refs.bottomSheet.close()
+      }
     }
   }
 }

@@ -1,0 +1,38 @@
+@import "../../assets/scss/helpers/variables";
+
+.icon-btn{
+  appearance: none;
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: $md-sys-color-surface-variant-light;
+  color: $md-sys-color-primary-light;
+  border-radius: 50%;
+  transition: background-color, color 0.25s ease;
+
+  &:hover {
+    color: $md-sys-color-on-primary-light;
+    background: $md-sys-color-primary-light;
+  }
+
+  .dark-mode & {
+    background: $md-sys-color-surface-variant-dark;
+    color: $md-sys-color-primary-dark;
+
+    &:hover {
+      color: $md-sys-color-on-primary-dark;
+      background: $md-sys-color-primary-dark;
+    }
+  }
+}
+
+.icon-btn__icon {
+  width: 24px;
+  height: 24px;
+}
