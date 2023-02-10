@@ -83,7 +83,9 @@ export default {
           })
           .then((data) => {
             this.projects = data
-            this.isProjectLoaded = true
+            setTimeout(() => {
+              this.isProjectLoaded = true
+            },1000)
             this.currentProject()
           });
     },

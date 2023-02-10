@@ -67,7 +67,9 @@ export default {
           })
           .then((data) => {
             this.homePageData = data
-            this.isLoaded = true
+            setTimeout(() => {
+              this.isLoaded = true
+            },1000)
           });
     }
   }

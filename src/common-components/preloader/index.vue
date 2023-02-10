@@ -29,7 +29,7 @@ export default {
       this.addBodyOverflow()
     }
   },
-  beforeDestroy () {
+  beforeDestroy() {
     if (this.removeOverflow) {
       this.removeBodyOverflow()
     }

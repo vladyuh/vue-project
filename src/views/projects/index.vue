@@ -104,7 +104,9 @@ export default {
           })
           .then((data) => {
             this.projects = data
-            this.isLoaded = true
+            setTimeout(() => {
+              this.isLoaded = true
+            },1000)
           });
     },
     setSelected (option) {

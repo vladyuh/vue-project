@@ -50,15 +50,37 @@
           </ul>
         </div>
         <div class="mobile-menu__bottom">
-          <switcher
-              name="dark-mode"
-              id="dark-mode"
-              class="mobile-menu__dark-mode"
-              @input="toggleTheme"
-              :value="isDarkModeOn"
-          >
-            <span>Тёмная тема</span>
-          </switcher>
+          <div class="mobile-menu__nav">
+            <ul class="mobile-menu__nav-items">
+
+              <li
+                  class="mobile-menu__nav-item"
+              >
+                <div class="mobile-menu__nav-link mobile-menu__nav-link--with-icon">
+
+                  <icon
+                      class="mobile-menu__nav-link-icon"
+                      icon-name="ic_dark"
+                      width="24"
+                      height="24"
+                  />
+
+                  <switcher
+                      name="dark-mode"
+                      id="dark-mode"
+                      class="mobile-menu__dark-mode"
+                      @input="toggleTheme"
+                      :value="isDarkModeOn"
+                  >
+                    <span>Тёмная тема</span>
+                  </switcher>
+
+
+                </div>
+
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
