@@ -66,18 +66,18 @@
   font-weight: 600;
   text-align: center;
   white-space: nowrap;
-  color: $color-text-primary;
+  color: $md-sys-color-on-surface-light;
 
   .dark-mode & {
-    color: $color-text-primary-dm;
+    color: $md-sys-color-on-surface-dark;
   }
 
   .toggles__item:hover &,
   .toggles__item--active & {
-    color: $color-text-primary;
+    color: $md-sys-color-on-surface-light;
 
     .dark-mode & {
-      color: $color-text-primary-dm;
+      color: $md-sys-color-on-surface-dark;
     }
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <section
+      v-if="isProjectLoaded"
       class="project-page-detail"
   >
     <div class="container">
-      <section-header
-          :level="2"
+      <back-title
           :text="project?.title"
       />
     </div>
@@ -30,6 +30,11 @@
       </div>
     </div>
   </section>
+  <preloader
+      v-else
+      full-page
+      remove-overflow
+  />
 </template>
 
 <script>
@@ -37,14 +42,15 @@ import {mapActions} from "vuex";
 import sectionHeader from "@/common-components/section-header";
 import Btn from "@/common-components/btn"
 import Preloader from "@/common-components/preloader"
+import BackTitle from "@/common-components/back-title";
 
 export default {
   name: 'ProjectsPageView',
   components: {
     sectionHeader,
     Btn,
-    // eslint-disable-next-line vue/no-unused-components
-    Preloader
+    Preloader,
+    BackTitle
   },
   props: {
     code: String

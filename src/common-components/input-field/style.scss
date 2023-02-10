@@ -67,10 +67,10 @@ textarea {
       align-items: center;
       width: $iconDimensions;
       height: $iconDimensions;
-      color: $color-text-primary;
+      color: $md-sys-color-on-surface-light;
 
       .dark-mode & {
-        color: $color-text-primary-dm;
+        color: $md-sys-color-on-surface-dark;
       }
     }
 
@@ -93,10 +93,10 @@ textarea {
       align-items: center;
       width: $iconDimensions;
       height: $iconDimensions;
-      color: $color-text-primary;
+      color: $md-sys-color-on-surface-light;
 
       .dark-mode & {
-        color: $color-text-primary-dm;
+        color: $md-sys-color-on-surface-dark;
       }
     }
 

@@ -1,27 +1,10 @@
+/* m3 colors */
 @import "colors";
-/* colors */
+
+/* additional colors */
 $black: #000;
 $white: #fff;
-$color-border: #D3D9EB;
-//M3 theme light
-$color-bg-primary: #FFFBFF;
-$color-text-primary: #201A19;
-$color-text-secondary: #241a00;
-$color-accent-primary: #A03F28;
-$color-accent-secondary: #FFDAD2;
-$color-item-primary: #F9E09F;
-$color-item-secondary: #FAF1F4;
-$color-input-bg: #EEE9ED;
 $box-elevation: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
-//M3 theme dark
-$color-bg-primary-dm: #201A19;
-$color-text-primary-dm: #EDE0DD;
-$color-text-secondary-dm: #ffdad2;
-$color-accent-primary-dm: #FFB4A3;
-$color-accent-secondary-dm: #5F3F37;
-$color-item-primary-dm: #554512;
-$color-item-secondary-dm: #2B2220;
-$color-input-bg-dm: #282221;
 $box-elevation-dm: 0px 2px 8px -1px rgba(0,0,0,0.2), 0px 4px 9px 0px rgba(0,0,0,0.14), 0px 1px 15px 0px rgba(0,0,0,0.12);
 
 /* inputs */
@@ -29,7 +12,6 @@ $font-size: 16px;
 $line-height: 24px;
 $defaultPadding: 12px;
 $paddingWithIcon: 12px 12px 12px 40px;
-$invalid: red;
 $inputHeight: 48px;
 $inputHeightWithBorder: 52px;
 $iconDimensions: 20px;

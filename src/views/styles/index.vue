@@ -3,7 +3,7 @@
     <section>
       <div class="container">
         <back-title
-            text="Назад"
+            text="Компоненты"
         />
         <section-header
             :level="1"

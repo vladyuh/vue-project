@@ -2,7 +2,6 @@
 @import "@/assets/scss/helpers/mixins";
 
 .projects-page {
-  padding-top: 48px;
   padding-bottom: 48px;
 
   .section-h2 {
@@ -12,7 +11,7 @@
 }
 
 .projects-page__filter {
-  //display: none;
+  display: none;
   justify-content: flex-end;
   margin-bottom: 16px;
 
@@ -33,7 +32,7 @@
   width: calc(100% - 16px);
   margin: 8px;
 
-  @include md {
+  @include sm {
     width: calc(100% / 2 - 16px);
   }
 
@@ -65,21 +64,11 @@
 
 .projects-list__item-link {
   font-weight: 600;
-  color: $color-text-secondary;
   margin-bottom: auto;
-
-  .dark-mode & {
-    color: $color-text-secondary-dm;
-  }
 }
 
 .projects-list__item-title {
-  color: $color-text-primary;
   margin-bottom: 0;
-
-  .dark-mode & {
-   color: $color-text-primary-dm;
-  }
 }
 
 .projects-list__item-desc {
@@ -87,11 +76,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: $color-text-primary;
   margin: 8px 0 0 0;
   width: 100%;
-
-  .dark-mode & {
-    color: $color-text-primary-dm;
-  }
 }

@@ -4,9 +4,8 @@
       class="projects-page"
   >
     <div class="container">
-      <section-header
-        :level="2"
-        text="Проекты"
+      <back-title
+          text="Проекты"
       />
       <div class="projects-page__filter">
         <custom-select
@@ -26,6 +25,11 @@
       </div>
     </div>
   </section>
+  <preloader
+    v-else
+    full-page
+    remove-overflow
+  />
 </template>
 
 <script>
@@ -34,15 +38,17 @@ import ProjectListItem from "@/views/projects/project-list-item";
 import CustomSelect from "@/common-components/custom-select";
 import SectionHeader from "@/common-components/section-header";
 import Preloader from "@/common-components/preloader";
+import BackTitle from "@/common-components/back-title";
 
 export default {
   name: 'ProjectsView',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     SectionHeader,
     CustomSelect,
     ProjectListItem,
-    // eslint-disable-next-line vue/no-unused-components
-    Preloader
+    Preloader,
+    BackTitle
   },
   data() {
     return {
