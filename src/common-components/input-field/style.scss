@@ -7,10 +7,34 @@ input[type="submit"] {
 
 input:not([type=checkbox]):not([type=radio]) {
   height: $inputHeight;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px $md-sys-color-surface-variant-light inset;
+    transition: background-color 5000s ease-in-out 0s;
+
+    .dark-mode & {
+      -webkit-box-shadow: 0 0 0 1000px $md-sys-color-surface-variant-dark inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
 }
 
 textarea {
   height: $inputHeight * 2;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px $md-sys-color-surface-variant-light inset;
+    transition: background-color 5000s ease-in-out 0s;
+
+    .dark-mode & {
+      -webkit-box-shadow: 0 0 0 1000px $md-sys-color-surface-variant-dark inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
 }
 
 input:not([type=checkbox]):not([type=radio]),

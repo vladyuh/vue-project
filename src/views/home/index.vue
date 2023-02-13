@@ -18,30 +18,13 @@
             :level="5"
             v-html="homePageData?.pageCaption"
         />
-        <div class="btns">
-          <btn
-              icon="ic_email"
-              @click="$refs.feedbackBottomSheet.open()"
-          >
-            <span>Обратная связь</span>
-          </btn>
-          <btn
-              tonal
-              icon="ic_telegram"
-              href="https://t.me/amogus_1997"
-          >
-            <span>Telegram</span>
-          </btn>
-        </div>
+        <btn
+            icon="ic_telegram"
+            href="https://t.me/amogus_1997"
+        >
+          <span>Telegram</span>
+        </btn>
       </div>
-
-      <bottom-sheet
-        ref="feedbackBottomSheet"
-      >
-        <feedback-modal
-            @on-success="$refs.feedbackBottomSheet.close()"
-        />
-      </bottom-sheet>
     </section>
     <preloader
       v-else
@@ -55,14 +38,10 @@
 import sectionHeader from "@/common-components/section-header";
 import preloader from "@/common-components/preloader"
 import Btn from "@/common-components/btn";
-import BottomSheet from "@/common-components/bottom-sheet";
-import FeedbackModal from "@/views/home/feedback-modal";
 
 export default {
   name: 'HomeView',
   components: {
-    FeedbackModal,
-    BottomSheet,
     Btn,
     sectionHeader,
     preloader
