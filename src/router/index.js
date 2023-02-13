@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '@/views/home'
 import PageNotFound from "@/views/404";
 
 Vue.use(VueRouter)
@@ -13,7 +12,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import(/* webpackChunkName: "home" */ '../views/home')
   },
   {
     path: `/projects`,
