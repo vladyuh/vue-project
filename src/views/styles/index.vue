@@ -230,7 +230,7 @@
       <div class="container">
         <h2>Модальное окно</h2>
         <btn
-            @click="openCheckboxModal"
+            @click="openExampleModal"
         >
           <span>Показать модальное окно 1</span>
         </btn>
@@ -346,9 +346,9 @@ export default {
     getActiveTab(event) {
       this.toggles.activeToggle = event
     },
-    openCheckboxModal() {
+    openExampleModal() {
       this.openModal({
-        name: "checkbox-modal",
+        name: "example-modal",
         props: {
           isCloseBtn: true,
         },
