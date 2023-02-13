@@ -11,7 +11,7 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background: $md-sys-color-surface-variant-light;
+  background: $md-sys-color-secondary-container-light;
   color: $md-sys-color-primary-light;
   border-radius: 50%;
   transition: background-color, color 0.25s ease;
@@ -22,12 +22,66 @@
   }
 
   .dark-mode & {
-    background: $md-sys-color-surface-variant-dark;
+    background: $md-sys-color-secondary-container-dark;
     color: $md-sys-color-primary-dark;
 
     &:hover {
       color: $md-sys-color-on-primary-dark;
       background: $md-sys-color-primary-dark;
+    }
+  }
+
+  &.icon-btn--filled {
+    background: $md-sys-color-primary-light;
+    color: $md-sys-color-on-primary-light;
+
+    &:hover {
+      opacity: 0.92;
+    }
+
+    .dark-mode & {
+      background: $md-sys-color-primary-dark;
+      color: $md-sys-color-on-primary-dark;
+    }
+  }
+
+  &.icon-btn--outline {
+    background: transparent;
+    color: $md-sys-color-on-surface-variant-light;
+    border: 1px solid $md-sys-color-outline-light;
+
+    &:hover {
+      color: $md-sys-color-on-surface-variant-light;
+      background: transparentize($md-sys-color-on-surface-variant-light, 0.92)
+    }
+
+    .dark-mode & {
+      background: transparent;
+      color: $md-sys-color-on-surface-variant-dark;
+      border: 1px solid $md-sys-color-outline-dark;
+
+      &:hover {
+        color: $md-sys-color-on-surface-variant-dark;
+        background: transparentize($md-sys-color-on-surface-variant-dark, 0.92)
+      }
+    }
+  }
+
+  &.icon-btn--no-bg {
+    background: transparent;
+    color: $md-sys-color-on-surface-variant-light;
+
+    &:hover {
+      background: transparentize($md-sys-color-on-surface-variant-light, 0.92);
+    }
+
+    .dark-mode & {
+      background: transparent;
+      color: $md-sys-color-on-surface-variant-dark;
+
+      &:hover {
+        background: transparentize($md-sys-color-on-surface-variant-light, 0.92);
+      }
     }
   }
 }

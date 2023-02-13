@@ -4,9 +4,16 @@
       class="project-page-detail"
   >
     <div class="container">
-      <back-title
-          :text="project?.title"
-      />
+      <div class="project-page-detail__head">
+        <icon-btn
+            icon="ic_back"
+            is-back-button
+        />
+        <section-header
+            :level="2"
+            :text="project?.title"
+        />
+      </div>
     </div>
     <div v-if="isLoaded" class="container project-container">
       <div class="project-page-detail__left">
@@ -42,7 +49,7 @@ import {mapActions} from "vuex";
 import sectionHeader from "@/common-components/section-header";
 import Btn from "@/common-components/btn"
 import Preloader from "@/common-components/preloader"
-import BackTitle from "@/common-components/back-title";
+import iconBtn from "@/common-components/icon-btn";
 
 export default {
   name: 'ProjectsPageView',
@@ -50,7 +57,7 @@ export default {
     sectionHeader,
     Btn,
     Preloader,
-    BackTitle
+    iconBtn
   },
   props: {
     code: String
@@ -66,8 +73,6 @@ export default {
     if (this.code) {
       this.getProjectData()
     }
-  },
-  mounted() {
   },
   computed: {
     isLoaded() {

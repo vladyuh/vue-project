@@ -2,32 +2,27 @@
 @import "@/assets/scss/helpers/mixins";
 
 .projects-page {
+  padding-top: 48px;
   padding-bottom: 48px;
 
-  .section-h2 {
-    padding: 0 24px;
-    margin-bottom: 24px;
-  }
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
 
-  .back-title__inner {
-
-    &.fixed {
-      .icon-btn,
-      .custom-select {
-        display: none;
-      }
+    .section-h2 {
+      margin-bottom: 0;
+      padding: 0 16px;
     }
 
-    .icon-btn {
+    .projects-page__filter-icon {
       margin-left: auto;
     }
 
     .custom-select {
+      flex-shrink: 0;
+
       @include md {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
         width: calc(100% / 2 - 8px);
       }
 

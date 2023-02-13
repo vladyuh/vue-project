@@ -4,26 +4,33 @@
       class="projects-page"
   >
     <div class="container">
-      <back-title
-          ref="backTitle"
+      <div class="projects-page__head">
+        <icon-btn
+            icon="ic_back"
+            is-back-button
+        />
+        <section-header
+          :level="2"
           text="Проекты"
-      >
+        />
         <icon-btn
             v-if="isMobile || isTablet"
             icon="ic_sort"
             class="projects-page__filter-icon"
             @click="$refs.bottomSheet.open()"
         />
-        <custom-select
-            v-if="!isMobile && !isTablet"
-            class="projects-page__filter-select"
-            label="Сортировка"
-            ref="customSelect"
-            placeholder="Выберите..."
-            :options="options"
-            @input="setSelected($event)"
-        />
-      </back-title>
+        <keep-alive>
+          <custom-select
+              v-if="!isMobile && !isTablet"
+              class="projects-page__filter-select"
+              label="Сортировка"
+              ref="customSelect"
+              placeholder="Выберите..."
+              :options="options"
+              @input="setSelected($event)"
+          />
+        </keep-alive>
+      </div>
       <div class="projects-page__list">
         <project-list-item
             v-for="(project, index) in filteredProjects"
@@ -62,11 +69,11 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
+
 import ProjectListItem from "@/views/projects/project-list-item";
 import CustomSelect from "@/common-components/custom-select";
 import SectionHeader from "@/common-components/section-header";
 import Preloader from "@/common-components/preloader";
-import BackTitle from "@/common-components/back-title";
 import IconBtn from "@/common-components/icon-btn";
 import BottomSheet from "@/common-components/bottom-sheet";
 
@@ -75,12 +82,10 @@ export default {
   components: {
     BottomSheet,
     IconBtn,
-    // eslint-disable-next-line vue/no-unused-components
     SectionHeader,
     CustomSelect,
     ProjectListItem,
     Preloader,
-    BackTitle
   },
   data() {
     return {
@@ -98,7 +103,6 @@ export default {
   created() {
     this.getProjectsData()
   },
-  mounted() {},
   computed: {
     ...mapGetters(['isMobile']),
     ...mapGetters(['isTablet']),
@@ -147,10 +151,7 @@ export default {
       handler: async function (value) {
         if (value) {
           await this.$nextTick()
-          this.selected = JSON.parse(localStorage?.getItem('value'))
-          if (this.selected) {
-            this.$refs.customSelect?.selectOption(this.selected, false)
-          }
+          this.selectOption()
         }
       }
     }
@@ -176,7 +177,13 @@ export default {
       if(this.$refs.bottomSheet) {
         this.$refs.bottomSheet.close()
       }
-    }
+    },
+    selectOption () {
+      this.selected = JSON.parse(localStorage?.getItem('value'))
+      if (this.selected) {
+        this.$refs.customSelect?.selectOption(this.selected, false)
+      }
+    },
   }
 }
 </script>

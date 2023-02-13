@@ -144,8 +144,8 @@ export default {
 
       const currentCoordinates = contentWrap.getBoundingClientRect().top - CONTENT_RECT_TOP
 
-      //this.isShowTopBar = (currentCoordinates >= this.previousCoordinates)
-      //this.forceShowMenu = false
+      this.isShowTopBar = (currentCoordinates >= this.previousCoordinates)
+      this.forceShowMenu = false
       this.isTop = false
 
       if (this.windowWidth !== window.innerWidth) {

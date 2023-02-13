@@ -2,9 +2,6 @@
   <div class="styles styles-container">
     <section>
       <div class="container">
-        <back-title
-            text="Компоненты"
-        />
         <section-header
             :level="1"
             text="Заголовок H1"
@@ -56,6 +53,28 @@
         <breadcrumbs
             :items="breadcrumbs"
         />
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h2>Icon Buttons</h2>
+        <div class="buttons" style="display: flex; flex-wrap: wrap; gap: 16px;">
+          <icon-btn
+              filled
+              icon="ic_home"
+          />
+          <icon-btn
+              icon="ic_apps"
+          />
+          <icon-btn
+              outline
+              icon="ic_projects"
+          />
+          <icon-btn
+              no-bg
+              icon="ic_person"
+          />
+        </div>
       </div>
     </section>
     <section>
@@ -277,11 +296,12 @@ import BottomSheet from "@/common-components/bottom-sheet";
 import Switcher from "@/common-components/switcher";
 import sectionHeader from "@/common-components/section-header";
 import Icon from "@/common-components/icon";
-import backTitle from "@/common-components/back-title";
+import IconBtn from "@/common-components/icon-btn";
 
 export default {
   name: 'StylesView',
   components: {
+    IconBtn,
     Icon,
     Switcher,
     BottomSheet,
@@ -293,7 +313,6 @@ export default {
     InputField,
     radio,
     sectionHeader,
-    backTitle
   },
   data() {
     return {
