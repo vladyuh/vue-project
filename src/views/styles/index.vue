@@ -352,7 +352,7 @@ export default {
         props: {
           isCloseBtn: true,
         },
-        component: '',
+        component: () => import('@/views/styles/modal'),
         replace: true
       })
     }

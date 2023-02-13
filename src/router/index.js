@@ -18,18 +18,18 @@ const routes = [
   {
     path: `/projects`,
     name: 'projects',
-    component: () => import(/* webpackChunkName: "news" */ '../views/projects')
+    component: () => import(/* webpackChunkName: "projects" */ '../views/projects')
   },
   {
     path: `/projects/:code`,
     name: 'projects/page',
-    component: () => import(/* webpackChunkName: "news-page" */ '../views/projects/page'),
+    component: () => import(/* webpackChunkName: "projects-page" */ '../views/projects/page'),
     props: true
   },
   {
     path: `/styles`,
     name: 'styles',
-    component: () => import(/* webpackChunkName: "news" */ '../views/styles')
+    component: () => import(/* webpackChunkName: "styles" */ '../views/styles')
   },
   {
     path: "*",
