@@ -67,7 +67,6 @@ textarea {
   &:focus,
   &:active {
     border-color: $md-sys-color-primary-light;
-    border-width: 2px;
     
     .dark-mode & {
       border-color: $md-sys-color-primary-dark;

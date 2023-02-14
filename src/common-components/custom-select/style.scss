@@ -56,7 +56,6 @@
 
     .custom-select--opened & {
       border-color: $md-sys-color-primary-light;
-      border-width: 2px;
 
       .dark-mode & {
         border-color: $md-sys-color-primary-dark;
@@ -111,11 +110,11 @@
     border-radius: 0 0 4px 4px;
     overscroll-behavior: contain;
     box-shadow: $box-elevation;
-    background-color: $md-sys-color-surface-variant-light;
+    background: $md-sys-color-surface-2-light;
 
     .dark-mode & {
       box-shadow: $box-elevation-dm;
-      background-color: $md-sys-color-surface-variant-dark;
+      background: $md-sys-color-surface-2-dark;
     }
 
     &.open {
@@ -145,6 +144,8 @@
 
   &__option {
     margin: 0;
+    display: flex;
+    align-items: center;
     padding: 8px 16px;
     -webkit-transition: .15s ease-in;
     -o-transition: .15s ease-in;
@@ -158,19 +159,14 @@
     text-overflow: ellipsis;
     overflow: hidden;
     text-align: left;
-    border-bottom: 1px solid $md-sys-color-outline-light;
-
-    .dark-mode & {
-      border-bottom: 1px solid $md-sys-color-outline-dark;
-    }
-
-    &:last-child {
-      border-bottom: none;
-    }
 
     &:hover,
     &.active {
-      background: rgba(0, 0, 0, 0.2);
+      background: $md-sys-color-surface-variant-light;
+
+      .dark-mode & {
+        background: $md-sys-color-surface-variant-dark;
+      }
     }
 
     &-label {

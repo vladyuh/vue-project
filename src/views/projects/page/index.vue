@@ -10,7 +10,7 @@
             is-back-button
         />
         <section-header
-            :level="2"
+            :level="1"
             :text="project?.title"
         />
       </div>

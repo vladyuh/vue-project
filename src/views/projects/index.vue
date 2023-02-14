@@ -4,62 +4,37 @@
       class="projects-page"
   >
     <div class="container">
-      <div class="projects-page__head">
-        <icon-btn
-            icon="ic_back"
-            is-back-button
-        />
-        <section-header
-          :level="2"
+      <section-header
+          :level="1"
           text="Проекты"
+      />
+      <div class="projects-page__head">
+        <custom-select
+            class="projects-page__filter-select"
+            label="Сортировка"
+            ref="customSelect"
+            placeholder="Выберите..."
+            :options="options"
+            @input="setSelected($event)"
         />
-        <icon-btn
-            v-if="isMobile || isTablet"
-            icon="ic_sort"
-            class="projects-page__filter-icon"
-            @click="$refs.bottomSheet.open()"
+        <input-field
+            type="text"
+            class="projects-page__filter-search"
+            icon-name="ic_search"
+            label="Поиск"
+            placeholder="Введите для поиска"
+            v-model="searchQuery"
         />
-        <keep-alive>
-          <custom-select
-              v-if="!isMobile && !isTablet"
-              class="projects-page__filter-select"
-              label="Сортировка"
-              ref="customSelect"
-              placeholder="Выберите..."
-              :options="options"
-              @input="setSelected($event)"
-          />
-        </keep-alive>
       </div>
       <div class="projects-page__list">
         <project-list-item
-            v-for="(project, index) in filteredProjects"
+            v-for="(project, index) in searchByName"
             :key="index"
             :project="project"
         />
       </div>
     </div>
-
-    <bottom-sheet
-        ref="bottomSheet"
-        v-if="isMobile || isTablet"
-    >
-      <section-header
-        :level="5"
-        text="Сортировка"
-      />
-      <custom-select
-          class="projects-page__filter-select"
-          label="Сортировка"
-          ref="customSelect"
-          placeholder="Выберите..."
-          :options="options"
-          :is-in-bottom-sheet="true"
-          @input="setSelected($event)"
-      />
-    </bottom-sheet>
   </section>
-
   <preloader
     v-else
     full-page
@@ -72,18 +47,20 @@ import {mapActions, mapGetters} from "vuex";
 
 import ProjectListItem from "@/views/projects/project-list-item";
 import CustomSelect from "@/common-components/custom-select";
+import InputField from "@/common-components/input-field";
 import SectionHeader from "@/common-components/section-header";
 import Preloader from "@/common-components/preloader";
-import IconBtn from "@/common-components/icon-btn";
-import BottomSheet from "@/common-components/bottom-sheet";
+/*import IconBtn from "@/common-components/icon-btn";
+import BottomSheet from "@/common-components/bottom-sheet";*/
 
 export default {
   name: 'ProjectsView',
   components: {
-    BottomSheet,
-    IconBtn,
+    /*BottomSheet,
+    IconBtn,*/
     SectionHeader,
     CustomSelect,
+    InputField,
     ProjectListItem,
     Preloader,
   },
@@ -97,7 +74,8 @@ export default {
         {name: "filter", value: "title-down", label: "Алфавит по возрастанию"},
         {name: "filter", value: "title-up", label: "Алфавит по убыванию"},
       ],
-      selected: null
+      selected: null,
+      searchQuery: null
     }
   },
   created() {
@@ -143,6 +121,16 @@ export default {
       }
 
       return filtered
+    },
+    searchByName () {
+      if (!this.searchQuery || this.searchQuery === '' || this.searchQuery === ' ') {
+        return this.filteredProjects
+      }
+
+      const query = this.searchQuery.toLowerCase()
+      const filtered = this.filteredProjects
+
+      return filtered.filter((item) => item.title.toLowerCase().includes(query))
     }
   },
   watch: {
