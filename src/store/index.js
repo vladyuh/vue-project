@@ -23,17 +23,10 @@ export default new Vuex.Store({
         href: "/projects"
       },
     ],
-    breadcrumbs: [
-      { href: '/', text: 'Главная' },
-      { href: '/styles', text: 'Компоненты' },
-    ],
   },
   getters: {
     mobileMenuLinks: state => {
       return state.mobileMenuLinks;
-    },
-    breadcrumbs: state => {
-      return state.breadcrumbs;
     },
   },
   mutations: {

@@ -26,11 +26,6 @@ const routes = [
     props: true
   },
   {
-    path: `/styles`,
-    name: 'styles',
-    component: () => import(/* webpackChunkName: "styles" */ '../views/styles')
-  },
-  {
     path: "*",
     component: PageNotFound
   }
