@@ -11,56 +11,70 @@
 }
 
 .projects-page__head {
+  position: relative;
   display: flex;
   align-items: center;
-  background: $md-sys-color-surface-variant-light;
-  border-radius: 4px 4px 0 0;
   margin-bottom: 24px;
+  /*background: $md-sys-color-surface-variant-light;
 
   .dark-mode & {
     background: $md-sys-color-surface-variant-dark;
-  }
-}
-
-.projects-page__filter-select {
-  width: 50%;
-  border-right: 1px solid $md-sys-color-outline-light;
-
-  .custom-select__selected {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .custom-select__name {
-    white-space: nowrap;
-  }
-
-  .custom-select__option-label {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .dark-mode & {
-    border-right: 1px solid $md-sys-color-outline-dark;
-  }
-
-  @include md {
-    width: calc(100% / 3 - 1px);
-  }
+  }*/
 }
 
 .projects-page__filter-search {
-  width: 50%;
+  width: 100%;
 
   input[type="text"] {
     overflow: hidden;
     text-overflow: ellipsis;
+    border-radius: 56px;
+    border-color: transparent;
+  }
+
+  @include sm {
+    width: calc(100% / 2);
+
+    input[type="text"] {
+      border-radius: 56px 0 0 56px;
+      border: 1px solid $md-sys-color-outline-light;
+
+      .dark-mode & {
+        border-right: 1px solid $md-sys-color-outline-dark;
+      }
+    }
   }
 
   @include md {
-    width: calc(100% / 3 * 2 + 1px);
+    width: calc(100% / 3 * 2);
   }
+}
+
+.projects-page__filter-select {
+
+  @include sm {
+    width: calc(100% / 2);
+
+    .custom-select__selected {
+      border-radius: 0 56px 56px 0;
+      border: 1px solid $md-sys-color-outline-light;
+      border-left: 0;
+
+      .dark-mode & {
+        border: 1px solid $md-sys-color-outline-dark;
+      }
+    }
+  }
+
+  @include md {
+    width: calc(100% / 3);
+  }
+}
+
+.projects-page__filter-toggle {
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
 
 .projects-page__list {

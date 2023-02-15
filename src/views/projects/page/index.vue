@@ -23,10 +23,11 @@
         <p v-html="project?.dev"></p>
         <div class="project-page__btn-wr">
           <btn
+              icon="ic_in-new"
               class="project-page__btn"
               :href="`https://${project?.link}`"
           >
-            Подробнее
+            Открыть
           </btn>
         </div>
       </div>

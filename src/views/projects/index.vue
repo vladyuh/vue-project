@@ -8,15 +8,10 @@
           :level="1"
           text="Проекты"
       />
-      <div class="projects-page__head">
-        <custom-select
-            class="projects-page__filter-select"
-            label="Сортировка"
-            ref="customSelect"
-            placeholder="Выберите..."
-            :options="options"
-            @input="setSelected($event)"
-        />
+      <div
+          class="projects-page__head"
+          v-resize="onResize"
+      >
         <input-field
             type="text"
             class="projects-page__filter-search"
@@ -25,10 +20,42 @@
             placeholder="Введите для поиска"
             v-model="searchQuery"
         />
+        <icon-btn
+            class="projects-page__filter-toggle"
+            icon="ic_sort"
+            no-bg
+            @click="$refs.bottomSheet.open()"
+        />
+        <custom-select
+            v-if="!isMobile"
+            class="projects-page__filter-select"
+            label="Сортировка"
+            ref="customSelect"
+            placeholder="Выберите..."
+            :options="options"
+            @input="setSelected($event)"
+        />
+        <bottom-sheet
+            ref="bottomSheet"
+            v-if="isMobile"
+        >
+          <section-header
+            :level="5"
+            text="Сортировка"
+          />
+          <custom-select
+              label="Сортировка"
+              ref="customSelect"
+              placeholder="Выберите..."
+              :options="options"
+              @input="setSelected($event)"
+              is-in-bottom-sheet
+          />
+        </bottom-sheet>
       </div>
       <div class="projects-page__list">
         <project-list-item
-            v-for="(project, index) in searchByName"
+            v-for="(project, index) in filteredProjects"
             :key="index"
             :project="project"
         />
@@ -44,20 +71,21 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
+import { debounce } from 'lodash'
 
 import ProjectListItem from "@/views/projects/project-list-item";
 import CustomSelect from "@/common-components/custom-select";
 import InputField from "@/common-components/input-field";
 import SectionHeader from "@/common-components/section-header";
 import Preloader from "@/common-components/preloader";
-/*import IconBtn from "@/common-components/icon-btn";
-import BottomSheet from "@/common-components/bottom-sheet";*/
+import IconBtn from "@/common-components/icon-btn";
+import BottomSheet from "@/common-components/bottom-sheet";
 
 export default {
   name: 'ProjectsView',
   components: {
-    /*BottomSheet,
-    IconBtn,*/
+    BottomSheet,
+    IconBtn,
     SectionHeader,
     CustomSelect,
     InputField,
@@ -85,7 +113,6 @@ export default {
     ...mapGetters(['isMobile']),
     ...mapGetters(['isTablet']),
     filteredProjects () {
-
       const filtered = this.projects
 
       if(this.selected?.value === 'old') {
@@ -120,18 +147,13 @@ export default {
         })
       }
 
-      return filtered
-    },
-    searchByName () {
-      if (!this.searchQuery || this.searchQuery === '' || this.searchQuery === ' ') {
-        return this.filteredProjects
+      if (this.searchQuery && this.searchQuery !== '' && this.searchQuery !== ' ') {
+        const query = this.searchQuery.toLowerCase()
+        return filtered.filter((item) => item.title.toLowerCase().includes(query))
       }
 
-      const query = this.searchQuery.toLowerCase()
-      const filtered = this.filteredProjects
-
-      return filtered.filter((item) => item.title.toLowerCase().includes(query))
-    }
+      return filtered
+    },
   },
   watch: {
     isLoaded: {
@@ -172,6 +194,9 @@ export default {
         this.$refs.customSelect?.selectOption(this.selected, false)
       }
     },
+    onResize: debounce(function () {
+      this.selectOption()
+    }, 500)
   }
 }
 </script>

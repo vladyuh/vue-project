@@ -5,7 +5,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input:not([type=checkbox]):not([type=radio]) {
+input {
   height: $inputHeight;
 
   &:-webkit-autofill,
@@ -37,7 +37,7 @@ textarea {
   }
 }
 
-input:not([type=checkbox]):not([type=radio]),
+input,
 textarea {
   outline: none;
   resize: none;
@@ -101,7 +101,7 @@ textarea {
       }
     }
 
-    input:not([type=checkbox]):not([type=radio]) {
+    input {
       width: 100%;
       padding: $paddingWithIcon !important;
     }

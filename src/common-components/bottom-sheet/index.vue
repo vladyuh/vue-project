@@ -169,6 +169,8 @@ export default {
     this.$bus.on('bottom-sheet-close', this.close)
   },
   beforeDestroy () {
+    this.$bus.emit('bottom-sheet-close')
+
     this.$bus.off('bottom-sheet-update-content', this.updateContent)
     this.$bus.off('bottom-sheet-close', this.close)
     this.hammer?.pan?.destroy()
