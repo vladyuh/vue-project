@@ -21,6 +21,7 @@
             v-model="searchQuery"
         />
         <icon-btn
+            v-if="isMobile"
             class="projects-page__filter-toggle"
             icon="ic_sort"
             no-bg
