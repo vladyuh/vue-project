@@ -17,7 +17,7 @@
             class="projects-page__filter-search"
             icon-name="ic_search"
             label="Поиск"
-            placeholder="Введите для поиска"
+            placeholder="Введите для поиска..."
             v-model="searchQuery"
         />
         <icon-btn

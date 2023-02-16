@@ -2,7 +2,7 @@
 @import "@/assets/scss/helpers/mixins";
 
 .projects-page {
-  padding-top: 48px;
+  padding-top: 72px;
   padding-bottom: 48px;
 
   .section-h1 {
@@ -25,6 +25,17 @@
     text-overflow: ellipsis;
     border-radius: 56px;
     border-color: transparent;
+  }
+
+  @include sm-max {
+    .input-wr__label {
+      display: none;
+    }
+
+    input[type="text"] {
+      padding-top: 8px !important;
+      padding-right: 48px !important;
+    }
   }
 
   @include sm {

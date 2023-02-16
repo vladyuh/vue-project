@@ -5,10 +5,13 @@
   >
     <div class="container">
       <div class="project-page-detail__head">
-        <icon-btn
-            icon="ic_back"
-            is-back-button
-        />
+        <div class="project-page-detail__back-wr">
+          <icon-btn
+              class="project-page-detail__back"
+              icon="ic_back"
+              is-back-button
+          />
+        </div>
         <section-header
             :level="1"
             :text="project?.title"

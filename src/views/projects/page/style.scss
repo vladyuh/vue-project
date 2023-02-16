@@ -2,26 +2,35 @@
 @import "@/assets/scss/helpers/mixins";
 
 .project-page-detail {
-  padding-top: 48px;
+  padding-top: 72px;
   padding-bottom: 48px;
-
-  &__head {
-    display: flex;
-    align-items: center;
-    min-height: 56px;
-    margin-bottom: 32px;
-
-    .section-h1 {
-      margin-bottom: 0;
-      padding: 0 16px;
-    }
-  }
 
   .container {
     @include lg-max {
       max-width: 800px;
     }
   }
+}
+
+.project-page-detail__head {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  gap: 16px;
+
+  .section-h1 {
+    width: auto;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+}
+
+.project-page-detail__back-wr {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .project-container {
