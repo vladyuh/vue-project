@@ -34,6 +34,7 @@
             ref="customSelect"
             placeholder="Выберите..."
             :options="options"
+            icon-name="ic_sort"
             @input="setSelected($event)"
         />
         <bottom-sheet

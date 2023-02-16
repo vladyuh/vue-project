@@ -23,7 +23,7 @@ module.exports = defineConfig({
     manifestOptions: {
       scope: "/",
       start_url: "/",
-      background_color: "#FFF8E1",
+      background_color: "#1F1C15",
       icons: [
         {
           src: "./img/icons/android-chrome-192x192.png",

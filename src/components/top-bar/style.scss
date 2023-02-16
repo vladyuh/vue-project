@@ -73,10 +73,18 @@
     margin-left: 16px;
   }
 
-  &__logo {
+  &__burger {
     color: $md-sys-color-on-surface-light;
+
+    .dark-mode & {
+      color: $md-sys-color-on-surface-dark;
+    }
+  }
+
+  &__logo {
     display: flex;
     align-items: center;
+    color: $md-sys-color-on-surface-light;
 
     .dark-mode & {
       color: $md-sys-color-on-surface-dark;

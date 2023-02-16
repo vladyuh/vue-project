@@ -2,7 +2,7 @@
 @import "@/assets/scss/helpers/mixins";
 
 .projects-page {
-  padding-top: 72px;
+  padding-top: 64px;
   padding-bottom: 48px;
 
   .section-h1 {
@@ -126,8 +126,9 @@
 }
 
 .projects-list__item-link {
+  display: block;
   font-weight: 600;
-  margin-bottom: auto;
+  margin-bottom: 4px;
 }
 
 .projects-list__item-title {
