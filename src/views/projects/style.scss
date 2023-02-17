@@ -129,10 +129,12 @@
   display: block;
   font-weight: 600;
   margin-bottom: 4px;
+  padding-right: 48px;
 }
 
 .projects-list__item-title {
   margin-bottom: 0;
+  padding-right: 48px;
 }
 
 .projects-list__item-desc {
@@ -142,4 +144,54 @@
   text-overflow: ellipsis;
   margin: 8px 0 0 0;
   width: 100%;
+}
+
+.projects-list__item-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+}
+
+.projects-list__item-icon-bg {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  transition: all 0.3s ease-out;
+
+  .projects-list__item-wr:hover & {
+    color: #00639b;
+  }
+
+  .dark-mode & {
+    color: #1f1f1f;
+  }
+
+  .dark-mode .projects-list__item-wr:hover & {
+    color: #7fcfff;
+  }
+}
+
+.projects-list__item-icon-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #001d35;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+
+  .projects-list__item-wr:hover & {
+    color: #fff;
+  }
+
+  .dark-mode & {
+    color: #c2e7ff;
+  }
+
+  .dark-mode .projects-list__item-wr:hover & {
+    color: #003355;
+  }
 }
