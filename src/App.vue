@@ -47,10 +47,7 @@
       </custom-modal>
     </transition-group>
 
-    <div
-        v-if="$route.name === 'home'"
-        class="blobs"
-    >
+    <div class="blobs">
       <div class="blob blob-top-left"></div>
       <div class="blob blob-top-right"></div>
       <div class="blob blob-bottom-left"></div>

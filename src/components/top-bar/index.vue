@@ -144,9 +144,10 @@ export default {
 
       const currentCoordinates = contentWrap.getBoundingClientRect().top - CONTENT_RECT_TOP
 
+      this.isTop = currentCoordinates >= -56
+
       this.isShowTopBar = (currentCoordinates >= this.previousCoordinates)
       this.forceShowMenu = false
-      this.isTop = false
 
       if (this.windowWidth !== window.innerWidth) {
         this.isShowTopBar = true
@@ -155,10 +156,6 @@ export default {
       setTimeout(() => {
         this.previousCoordinates = currentCoordinates >= -CONTENT_RECT_TOP ? -CONTENT_RECT_TOP : currentCoordinates
         this.windowWidth = window.innerWidth
-
-        if(currentCoordinates === -CONTENT_RECT_TOP) {
-          this.isTop = true
-        }
       }, 200)
     }, 100),
   }

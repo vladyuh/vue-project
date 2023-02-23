@@ -16,7 +16,7 @@
     left: 16px;
     font-size: 12px;
     line-height: 16px;
-    font-weight: 600;
+    font-weight: 500;
     color: $md-sys-color-on-surface-light;
     transition: all 0.25s ease;
 
@@ -45,7 +45,7 @@
     padding: 24px 48px 8px 16px;
     font-size: $font-size;
     line-height: $line-height;
-    font-weight: 600;
+    font-weight: 500;
     color: $md-sys-color-on-surface-light;
     background-color: $md-sys-color-surface-variant-light;
     border-bottom: 1px solid $md-sys-color-outline-light;
@@ -152,7 +152,7 @@
     transition: .15s ease-in;
     font-size: $font-size;
     line-height: $line-height;
-    font-weight: 600;
+    font-weight: 500;
     height: 40px;
     white-space: nowrap;
     -o-text-overflow: ellipsis;

@@ -4,7 +4,7 @@
       :to="`${project.url}`"
   >
     <div class="projects-list__item-wr">
-      <span class="projects-list__item-link">{{ project?.link }}</span>
+<!--      <span class="projects-list__item-link">{{ project?.link }}</span>-->
       <section-header class="projects-list__item-title" :level="4" :text="project?.title"/>
       <p class="projects-list__item-desc" v-html="project?.description"/>
       <div class="projects-list__item-icon">
